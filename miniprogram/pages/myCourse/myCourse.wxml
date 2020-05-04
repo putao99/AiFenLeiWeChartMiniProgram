@@ -1,0 +1,108 @@
+<!--pages/myCourse/myCourse.wxml-->
+<import src='../../templates/loadMore/loadMore.wxml' />
+<view class="give-receive">
+  <view class="tab">
+    <view class="{{now==0?'active':''}}" data-current="0" bindtap="onTabTap">
+      <text class="tab-ch">已预约</text>
+    </view>
+    <view class="{{now==1?'active':''}}" data-current="1" bindtap="onTabTap">
+      <text class="tab-ch">已上课</text>
+    </view>
+  </view>
+  <swiper class="swiper give-swiper" current="{{now}}" duration="300" bindchange="onSwiperChange">
+    <swiper-item class="swiper-item">
+      <scroll-view class='scroll-view' bindscrolltolower="loadMore" scroll-y>
+        <view class='scroll-view-container'>
+
+          <view>
+            <view class="piece pp" wx:if="{{list.length === 0 && !isLoading}}">暂无课程记录</view>
+            <view class="piece" wx:if="{{list.length > 0}}" wx:for='{{list}}' wx:key="{{index}}">
+              <view class="li-up">
+                <view class="validity">
+                  <text class="pur-date">{{item.code || "--"}}</text>
+                </view>
+                
+              </view>
+              <view class="li-down">
+                <view class="li-down-left">
+                  <view class="head-portrait" bindtap="onTeacher" data-id='{{item.teacherId}}'>
+                    <view class="head-user">
+                      <image class="head-pic" src='{{item.facePath || "/images/storefront-info.png"}}' mode='aspectFill'></image>
+                      <view class="head-name">{{item.teacherName || '空'}}</view>
+                    </view>
+                  </view>
+                  <view bindtap="onDetail" data-id='{{item.id}}' data-course-id='{{item.courseId}}'>
+                    <view class="head-title">{{item.courseName || '空'}} </view>
+                    <view class="head-date">{{item.startDate}} {{item.startTime}} - {{item.endTime}} </view>
+                    <view class="head-store">{{item.storeRoomName || ''}}</view>
+                  </view>
+                </view>
+                <view bindtap="onDetail" data-id='{{item.id}}' data-course-id='{{item.courseId}}' class="li-down-right iconfont icon-right"></view>
+              </view>
+            </view>
+          </view>
+          <template is="loadMore" data="{{ ...{isLoading, hasMoreData, hideBottom} }}" />
+        </view>
+      </scroll-view>
+
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <scroll-view class='scroll-view' bindscrolltolower="loadMore" scroll-y>
+        <view class='filter'>
+          <view class='filter-left'>
+            <text class='filter-label'>日期筛选</text>
+            <view class='date'>
+              <picker mode='date' value='{{startDate}}' end='{{currentDate}}' bindchange='startDateChange'>
+                <view class='start-date'>{{startDate}}</view>
+              </picker>
+              <text style='margin-left: 20rpx;margin-right:20rpx;color: gray;'>至</text>
+               <picker mode='date' value='{{endDate}}' start='{{startDate}}' end='{{currentDate}}'  bindchange='endDateChange'>
+                <view class='end-date'>{{endDate}}</view>
+              </picker>
+              <text class='recent'></text>
+            </view>
+          </view>
+          <view class='filter-left'>
+            <text class='filter-label'>课程汇总</text>
+            <text style='color:#07704c;'>{{total}}</text>
+          </view>
+        </view>
+        <view class='scroll-view-container'>
+          <view id="piece-wrap1">
+            <view class="piece pp" wx:if="{{list.length === 0 && !isLoading}}">暂无课程记录</view>
+
+            <view class="piece" wx:if="{{list.length > 0}}" wx:for='{{list}}' wx:key="{{index}}">
+              <view class="li-up">
+                <text class="pur-date">{{item.code || "--"}}</text>
+                <block wx:if='{{item.cardProjectType == 1}}'>
+                  <text class="payment-info">实付 {{item.price}}储值</text>
+                </block>
+                <block wx:elif='{{item.cardProjectType == 2}}'>
+                  <text class="payment-info">实付 {{item.frequency}}次</text>
+                </block>
+                
+              </view>
+              <view class="li-down">
+                <view class="li-down-left">
+                  <view class="head-portrait" bindtap="onTeacher" data-id='{{item.teacherId}}'>
+                    <view class="head-user">
+                      <image class="head-pic" src='{{item.facePath || "/images/storefront-info.png"}}' mode='aspectFill'></image>
+                      <view class="head-name">{{item.teacherName || '空'}}</view>
+                    </view>
+                  </view>
+                  <view bindtap="onDetail" data-id='{{item.id}}' data-course-id='{{item.courseId}}'>
+                    <view class="head-title">{{item.courseName || '空'}} </view>
+                    <view class="head-date">{{item.startDate}} {{item.startTime}} - {{item.endTime}} </view>
+                    <view class="head-store">{{item.storeRoomName || ''}}</view>
+                  </view>
+                </view>
+                <view bindtap="onDetail" data-id='{{item.id}}' data-course-id='{{item.courseId}}' class="li-down-right iconfont icon-right"></view>
+              </view>
+            </view>
+          </view>
+          <template is="loadMore" data="{{ ...{isLoading, hasMoreData, hideBottom} }}" />
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

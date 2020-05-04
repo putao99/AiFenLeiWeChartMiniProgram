@@ -1,0 +1,27 @@
+<template name="courseHeader">
+  <view class='media-title'>
+    <block wx:if="{{item.subsituteType === 3}}">
+      <view class='media-title'>
+        <text decode='{{true}}'>{{item.name || '空'}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <navigator hover-class='none' class='media-title' wx:if='{{item.orderType === 0}}' url='/pages/bespeak/selectSeat/selectSeat?courseId={{item.id}}'>
+        <text decode='{{true}}'>{{item.name || '空'}}</text>
+        <text wx:if="{{item.subsituteType === 2}}" class="course-badge">{{item.subsituteTeacherName}} 代课</text>
+      </navigator>
+      <navigator hover-class='none' class='media-title' wx:elif='{{item.orderType === 1}}' url='/pages/bespeak/selectSeat/selectSeat?courseId={{item.id}}&action=look'>
+        <text decode='{{true}}'>{{item.name || '空'}}</text>
+        <text wx:if="{{item.subsituteType === 2}}" class="course-badge">{{item.subsituteTeacherName}} 代课</text>
+      </navigator>
+      <navigator hover-class='none' class='media-title' wx:elif='{{item.orderType === 2}}' url='/pages/bespeak/selectSeat/selectSeat?courseId={{item.id}}&action=end'>
+        <text decode='{{true}}'>{{item.name || '空'}}</text>
+        <text wx:if="{{item.subsituteType === 2}}" class="course-badge">{{item.subsituteTeacherName}} 代课</text>
+      </navigator>
+      <view hover-class='none' class='media-title' wx:elif='{{item.orderType === 3}}'>
+        <text decode='{{true}}'>{{item.name || '空'}}</text>
+        <text wx:if="{{item.subsituteType === 2}}" class="course-badge">{{item.subsituteTeacherName}} 代课</text>
+      </view>
+    </block>
+  </view>
+</template>

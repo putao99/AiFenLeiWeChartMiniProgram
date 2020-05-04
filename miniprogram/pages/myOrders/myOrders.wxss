@@ -1,0 +1,83 @@
+/* pages/myOrders/myOrders.wxss */
+@import "../../style/common.wxss";
+@import'../appointeToDoor/appointeToDoor.wxss';
+.tabHead_box{
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #FBF9F9;
+}
+.tab{
+  width: 100%;
+  position: relative;
+  padding: 20rpx 0;
+  background-color: #FBF9F9;
+  box-sizing: border-box;
+}
+.tab-head{
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    border: 1px solid #00d8cb;
+    border-radius: 14rpx;
+    position: absolute;
+     top: 20rpx;
+     left: 4%;
+     font-size: 16px;
+     background-color: #fff;
+     overflow: hidden;
+}
+.tab-head view{
+   color: #00d8cb;
+   width: 33.3%;
+   display: inline-flex;
+   justify-content: center;
+   align-content: center;
+   padding: 8rpx 0;
+}
+.tab-head view{
+  border-left: 1px solid #00d8cb;
+}
+.tab-head .active{
+   background-color: #00d8cb;
+   color: #fff;
+}
+.tab-content{
+    line-height: 160%;
+    margin-top:35px;
+}
+.tab-content .right-item{
+    padding-left: 15rpx;
+    display: none;
+}
+.tab-content .right-item.active{
+    display: block;
+    position: relative;
+    height: 100%;
+}
+.cancle_reason{
+  color: #fa6502;
+}
+.display{
+  display:block;
+width:100%;
+height:100%;
+position:absolute;
+top:50%;
+margin-top:230rpx;
+text-align:center;
+}
+.active::after{
+  content: "";
+  width: 100rpx;
+  height: 4rpx;
+  position: absolute;
+  bottom: 0;
+}
+

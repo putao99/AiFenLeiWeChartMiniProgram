@@ -1,0 +1,21 @@
+<!--pages/selectVillage/selectVillage.wxml-->
+<view class="container">
+  <view class="top_search">
+    <input class="top_searchinput" placeholder="请输入小区名称" placeholder-style="" placeholder-class="" bindinput="selectVillage" bindfocus="selectFocus"/>
+    <image src="/images/icon_search@2x.png" class="top_searchicon" bindtap="handleSearch"></image>
+  </view>
+  <view class="list_wrap">
+    <view wx:if="{{unitListLength > 0}}" class="{{lister_itemscontainer}}" wx:for="{{unitList}}" wx:key="key" bindtap="selectedVillage" data-unit_name="{{item.unit_name}}" data-detailed_address="{{item.detailed_address}}">
+        <view class="list_itemsinner">
+          <text class="village_tit">小区名称：</text>
+          <text class="village_name">{{item.unit_name}}</text>
+        </view>
+        <view class="list_itemsinner">
+          <text class="village_tit">小区地址：</text>
+          <text class="village_name">{{item.detailed_address}}</text>
+        </view>
+    </view>
+    <view wx:if="{{unitListLength == 0}}" class="length0">{{nothingTest}}</view>
+    <!-- <view class="{{hasNothing}}">{{nothingTest}}</view> -->
+  </view>
+</view>

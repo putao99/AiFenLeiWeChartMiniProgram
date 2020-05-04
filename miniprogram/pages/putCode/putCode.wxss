@@ -1,0 +1,110 @@
+/* pages/putCode/putCode.wxss */
+
+@import "../../style/common.wxss";
+
+/*part 我的投放码 code_puton.html 页面样式 begin!*/
+.xg-main{
+  width: 100vw;
+  height: 100vh;
+}
+.codr_container{
+    height: 100%;
+    overflow: hidden;
+}
+.bgc_green{
+    background-color:#78c9cc;
+}
+.erwei_container{
+    overflow: hidden;
+    margin: 60rpx 80rpx;
+    padding-top:60rpx;
+    background-color: #fff;
+    border-radius: 14rpx;
+    min-height: 40vh;
+}
+.img_erwei{
+    display: block;
+    text-align: center;
+    height: 420rpx;
+    width: 420rpx;
+    margin: 0 auto;
+}
+.p_erweitips{
+    text-align: center;
+    margin: 10rpx auto 50rpx;
+    line-height: 60rpx;
+    font-size: 14px;
+}
+.class_group{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: space-between;
+    color: #fff;
+    font-size: 12px;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 270rpx;
+    position: fixed;
+    bottom: 10vh;
+    left: 0;
+    right: 0;
+}
+.group_iterms{
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    width: 20%;
+    align-items: center;
+}
+
+.img_show{
+  height: 50rpx;
+    width: 50rpx;
+}
+.icon_txt{
+    margin: 14rpx 0 40rpx;
+    text-align: center;
+}
+.group_iterms.active .icon_txt{
+    color: #ea6f5a;
+}
+
+
+.canvas {
+    margin: 80rpx auto;
+    width: 220px;
+    height: 220px;
+}
+.btnItemView{
+  width: 20%;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.zwm_img{
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.btnView text{
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  font-size: 12px;
+}
+
+.tipText{
+  width: 90%;
+  font-size: 13px;
+  color:darkgray;
+  text-align: center;
+}
+/* !end part 我的投放码 code_puton.html 页面样式 */

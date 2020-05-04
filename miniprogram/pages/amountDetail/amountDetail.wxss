@@ -1,0 +1,75 @@
+/* pages/amountDetail/amountDetail.wxss */
+
+@import "../../style/common.wxss";
+
+.delivery_list{
+  width: 100vw;
+  margin-top: 20rpx;
+}
+.list_coontainer{
+  width: 100%;
+}
+.list_inner{
+  font-size: 14px;
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.list_inner:nth-child(2n){
+    background-color: #ffffff;
+}
+.list_inner:nth-child(2n+1){
+    background-color: #FBF9F9;
+}
+.icon-state{
+  height: 40rpx;
+  width: 40rpx;
+}
+.disNone{
+  display: none;
+}
+.disBlock{
+ width:100%;
+text-align:center;
+font-size:14px;
+display:flex;
+height:90vh;
+flex-direction:column;
+flex-wrap:nowrap;
+justify-content:center;
+align-items:center;
+}
+.img_nodata{
+  height: 200rpx;
+  width: 200rpx;
+}
+.text_nodata{
+  margin-top:20rpx;
+}
+.widthdraw{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.succet{
+  font-size:38rpx;
+  color: #78c9cc;
+}
+.falset{
+   font-size:38rpx;
+    color: #ff5d53;
+}
+.succenum{
+  font-size: 40rpx;
+  color: #333333;
+}
+.falsenum{
+  font-size: 40rpx;
+  color: #ff5d53;
+}
+.left .p-type{
+  margin-top: 16rpx;
+}

@@ -1,0 +1,80 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+
+  <view class="register" >
+    <view class='logo_div'>
+        <image class="img_logo" src='/images/logo.png'></image>
+    </view>
+    <form id="userRegForm">
+        <!-- <input type="hidden" value="${openId}" name="openId" /> 
+        <input type="hidden" value="${deviceId}" name="deviceId" /> -->
+        <view class="wx_login">
+          
+          <button 
+          type="button" 
+          hover-class="btn-hover" 
+          class="am-btn wx_btn icon_wx wx_btn_primary" 
+          open-type="getPhoneNumber" 
+          bindgetphonenumber="getPhoneNumber"
+          >微信快捷登录</button>
+          <!-- 
+          <button 
+          type="button" 
+          hover-class="btn-hover" 
+          class="am-btn wx_btn" 
+          open-type='getUserInfo'  
+          bindgetuserinfo="onGotUserInfo">微信号快捷登录</button>
+          -->     
+          <!-- <button 
+            type="default" 
+            style="margin-top:20px;"  
+            class="am-btn wx_btn icon_mobile" 
+            bindtap="toggleLoginMobile"
+          >手机号码登录</button> -->
+        </view>
+
+        <view class="login-mobile-wrap {{isLoginMobile ? 'active' : ''}}" >
+          <view class="page-btn-close" bindtap="toggleLoginMobile">
+            <!-- <image src="/images/icon_delivery_nopass.png" style="width:100%;height:100%;"></image> -->
+          </view>
+          <view class="login-mobile-main">
+            <view class='login-mobile-logo'>
+                <image class="img_logo" src='/images/logo.png'></image>
+            </view>
+            <view class="res-item">
+              <input 
+                name="mobile" 
+                id="mobile" 
+                type="number" 
+                maxlength="11"  
+                bindinput='savePhone' 
+                placeholder="请输入手机号" 
+                class="input-item mobile icon_mobile" 
+              /> 
+              <!-- <image class="res-icon am-icon-phone" src='/images/icon_phone.png'></image> -->
+            </view>
+
+            <view class="res-item">
+                <input type="text" id="verificationCode" 
+                name="verificationCode" 
+                placeholder="验证码" 
+                class="input-item yanzheng icon_code" 
+                bindinput='passwordInput' 
+                bindblur='saveCode'/> 
+                <!-- <image class="res-icon am-icon-mobile" src='/images/icon_securitycode.png'></image> -->
+                <button hover-class="btn-hover" class="{{sendmsg}}" bindtap="sendmessg">{{getmsg}}</button>
+            </view>
+
+            <view class="res-btn">
+                <button type="default" id="res-btn" class="am-btn am-btn-block" bindtap='bindUserName'>手机号登录</button>
+            </view>
+          </view>
+        </view>
+
+        <toast id='toast' />
+        <!-- 验证码组件 -->
+        <verifycode id='verifycode' title="请输入验证码" content="已发送到手机:" />
+    </form>
+  </view>
+</view>
+

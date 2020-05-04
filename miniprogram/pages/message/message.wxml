@@ -1,0 +1,173 @@
+<tab-slider 
+  height="{{height}}" 
+  tagList="{{tagList}}" 
+  bind:tagChangeAction="tagChangeAction" 
+  bind:scrolltolower="scrolltolowerHandler" 
+
+>
+
+  <view slot="swiper-0" class="swiper-content notice">
+    <block wx:if="{{tagData.notice.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view 
+        wx:for="{{tagData.notice.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.create_time}}</view>
+        <navigator 
+          class="item-main" 
+          data-id="{{item.id}}" 
+          data-index="{{index}}" 
+          data-lookup="{{item.cLookUp}}" 
+          bindtap="goDetail" 
+          url="../messageDetail/messageDetail?type=communityDetails&id={{item.id}}" 
+        >
+          <view class="item-title">
+            <view wx:if="{{item.cLookUp === 0}}" class="unread"></view>
+            {{item.title}}
+          </view>
+          
+          <rich-text class="item-desc" nodes="{{item.contents}}" ></rich-text>
+          <view class="item-detail">
+            <view style="flex:1;">查看详情</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </navigator>
+
+      </view>
+    </block>
+
+  </view>
+  <view slot="swiper-1" class="swiper-content recovery">
+    <block wx:if="{{tagData.recovery.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view 
+        wx:for="{{tagData.recovery.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.create_time}}</view>
+        <navigator 
+          data-id="{{item.id}}" 
+          data-index="{{index}}" 
+          data-lookup="{{item.cLookUp}}" 
+          bindtap="goDetail" 
+          class="item-main" 
+          url="../messageDetail/messageDetail?type=recoveryDetails&id={{item.id}}"  
+        >
+          <view class="item-title">
+            <view wx:if="{{item.cLookUp === 0}}" class="unread"></view>
+            {{item.res_name}} 
+          </view>
+          <rich-text class="item-desc" nodes="{{item.content}}" ></rich-text>
+          <view class="item-detail">
+            <view style="flex:1;">查看详情</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+          
+        </navigator>
+      </view>
+    </block>
+  </view>
+  <view slot="swiper-2" class="swiper-content feedback">
+
+
+    <block wx:if="{{tagData.feedback.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view 
+        wx:for="{{tagData.feedback.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.inspectTime}}</view>
+        <navigator 
+          data-id="{{item.id}}" 
+          data-index="{{index}}" 
+          data-lookup="{{item.cLookUp}}" 
+          bindtap="goDetail" 
+          class="item-main" 
+          url="../messageDetail/messageDetail?type=feedbackDetails&id={{item.id}}"  
+        >
+          <view class="item-title">
+            <view wx:if="{{item.cLookUp === 0}}" class="unread"></view>
+            {{item.title}}
+          </view>
+          <rich-text class="item-desc" nodes="{{item.content}}" ></rich-text>
+          <view class="item-imglist" wx:if="{{item.imgList.length > 0}}">
+            <image
+              wx:for="{{item.imgList}}"
+              wx:key="index"
+              wx:for-item="img"
+              src="{{img}}"
+              style="width:60px;" 
+              class="img-thumb" 
+              mode="widthFix" 
+              lazy-load="true" 
+            ></image>
+          </view>
+          <view class="item-detail">
+            <view style="flex:1;">查看详情</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+  <view slot="swiper-3" class="swiper-content sysmsgs">
+
+    <block wx:if="{{tagData.sysmsgs.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view 
+        wx:for="{{tagData.sysmsgs.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.create_time}}</view>
+        <navigator 
+          data-id="{{item.id}}" 
+          data-index="{{index}}" 
+          data-lookup="{{item.cLookUp}}" 
+          bindtap="goDetail" 
+          class="item-main" 
+          url="../messageDetail/messageDetail?type=sysDetails&id={{item.id}}"  
+        >
+          <view class="item-title">
+            <view wx:if="{{item.cLookUp === 0}}" class="unread"></view>
+            {{item.title}}
+          </view>
+          <rich-text class="item-desc" nodes="{{item.content}}" ></rich-text>
+          <view class="item-detail">
+            <view style="flex:1;">查看详情</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+
+</tab-slider>

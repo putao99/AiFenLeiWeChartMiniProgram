@@ -1,0 +1,28 @@
+.weui-article{
+  font-size: 16px;
+}
+
+.error-wrap{
+  margin-top: 20%;
+}
+
+.error-wrap .error-tips{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.error-wrap .error-try-btn{
+  width: 50%;
+  margin:0 auto;
+  background-color: #78C9CC;
+  font-size: 16px;
+}
+
+.img-thumb,.weui-article__p .img-thumb{
+  vertical-align: top;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 1px 0 3px 0 rgba(39, 54, 78, 0.12);
+}

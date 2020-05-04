@@ -1,0 +1,11 @@
+{
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "爱分类智能回收",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "toast": "/components/toast/toast",
+    "verifycode": "/components/verifycode"
+  }
+}

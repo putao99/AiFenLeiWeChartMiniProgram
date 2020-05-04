@@ -1,0 +1,135 @@
+<tab-slider 
+  height="{{height}}" 
+  tagList="{{tagList}}" 
+  bind:tagChangeAction="tagChangeAction" 
+  bind:scrolltolower="scrolltolowerHandler" 
+
+>
+
+  <view slot="swiper-0" class="swiper-content notice">
+    
+
+
+    <block wx:if="{{tagData.cast.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="account-hd">
+        <view class="score-current">
+          <view class="score">{{tagData.cast.count}}</view>
+          <text class="score-tips">累计投递垃圾次数</text>
+        </view>
+      </view>
+      <view 
+        wx:for="{{tagData.cast.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.time}}</view>
+          <view
+            wx:for="{{item.details}}"
+            wx:key="index" 
+            wx:for-item="subitem"  
+            class="item-main"
+          >
+            <image src="{{subitem.iconPath}}" mode="aspectFill" style="width:24px;height:24px;margin-right:5px;"></image>
+            <view class="item-subdata-title">{{subitem.title}}</view>
+            <view class="item-subdata-weight" wx:if="{{subitem.weight}}">{{subitem.weight}}</view>
+            <block wx:if="{{subitem.isPass}}">
+              <view class="item-subdata-status">{{subitem.getScore}}积分</view>
+            </block>
+            <block wx:else>
+              <view class="item-subdata-status {{subitem.statusTxtClass}}">{{subitem.statusTxt}}</view>
+            </block>
+          </view>
+      </view>
+    </block>
+
+  </view>
+  <view slot="swiper-1" class="swiper-content recovery">
+    <block wx:if="{{tagData.recovery.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="account-hd">
+        <view class="score-current">
+          <view class="score">{{tagData.recovery.count}}</view>
+          <text class="score-tips">累计人工回收次数</text>
+        </view>
+      </view>
+      <view 
+        wx:for="{{tagData.recovery.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.time}}</view>
+          <view
+            wx:for="{{item.details}}"
+            wx:key="index" 
+            wx:for-item="subitem"  
+            class="item-main"
+          >
+            <image src="{{subitem.iconPath}}" mode="aspectFill" style="width:24px;height:24px;margin-right:5px;"></image>
+            <view class="item-subdata-title">{{subitem.title}}</view>
+            <view class="item-subdata-weight" wx:if="{{subitem.weight !== null}}">{{subitem.weight}}</view>
+            <block wx:if="{{subitem.statue === 1}}">
+              <view class="item-subdata-status">{{subitem.getScore}}积分</view>
+            </block>
+            <block wx:else>
+              <view class="item-subdata-status c-red">巡检未通过</view>
+            </block>
+          </view>
+      </view>
+    </block>
+  </view>
+  <view slot="swiper-2" class="swiper-content feedback">
+
+
+    <block wx:if="{{tagData.sweep.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="account-hd">
+        <view class="score-current">
+          <view class="score">{{tagData.sweep.count}}</view>
+          <text class="score-tips">累计上门回收次数</text>
+        </view>
+      </view>
+      <view 
+        wx:for="{{tagData.sweep.data}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="item-wrap"
+      >
+        <view class="item-time">{{item.time}}</view>
+          <view
+            wx:for="{{item.details}}"
+            wx:key="index" 
+            wx:for-item="subitem"  
+            class="item-main"
+          >
+            <image src="{{subitem.iconPath}}" mode="aspectFill" style="width:24px;height:24px;margin-right:5px;"></image>
+            <view class="item-subdata-title">{{subitem.title}}</view>
+            <block wx:if="{{subitem.statue === 5}}">
+              <view class="item-subdata-status">{{subitem.getScore}}{{subitem.restore === 1 ? '积分' : '元'}}</view>
+            </block>
+            <block wx:else>
+              <view class="item-subdata-status {{subitem.statusTxtClass}}">{{subitem.statusTxt}}</view>
+            </block>
+          </view>
+      </view>
+    </block>
+  </view>
+
+</tab-slider>

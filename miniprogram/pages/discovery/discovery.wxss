@@ -1,0 +1,55 @@
+/* miniprogram/pages/discovery/discovery.wxss */
+
+.weui-cells{
+  margin-top: 0;
+}
+.weui-cell-v{
+  display: flex;
+  flex-direction: column;
+}
+.weui-cell-100{
+  width: 100%;
+}
+.weui-cell::before{
+  left:0;
+}
+.item-title,.item-desc{
+line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item-title{
+  font-weight: 400;
+  font-size: 17px;
+  color: rgba(0,0,0,.9);
+
+}
+
+.item-desc{
+  color: rgba(0,0,0,.5);
+  font-size: 14px;
+  padding-top: 4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.weui-media-box__thumb{
+  border-radius: 6px;
+  box-shadow: 1px 0 3px 0 rgba(39, 54, 78, 0.12);
+  height: 100%;
+  width: 100%;
+}
+
+.no-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(0,0,0,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

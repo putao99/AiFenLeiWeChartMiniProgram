@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "dialog":"../../components/dialog/dialog"
+  },
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "绑定垃圾袋",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,4 @@
+<!--pages/UserGeneratedContent/UserGeneratedContent.wxml-->
+<view class="container">
+  <image src="/images/sickPage.png" mode="widthFix"></image>
+</view>

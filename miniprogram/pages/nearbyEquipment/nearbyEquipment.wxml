@@ -1,0 +1,19 @@
+<!--pages/nearbyEquipment/nearbyEquipment.wxml-->
+<view class="container">
+
+
+<!-- map.wxml -->
+<!-- <map
+id="myMap"
+style="width: 100%; height: 60vh;"
+longitude="117.3590301695" latitude="34.1600392061"    
+scale='16'
+subkey="AS2BZ-VEU3O-4JPWF-SQ6OD-VHCPE-H7BRP"
+polyline="{{polyline}}"
+markers="{{markers}}"
+show-location='true'
+></map> -->
+
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location='true' style="width: 100%; height: {{view.Height}}px;" subkey="AS2BZ-VEU3O-4JPWF-SQ6OD-VHCPE-H7BRP"></map>
+
+</view>

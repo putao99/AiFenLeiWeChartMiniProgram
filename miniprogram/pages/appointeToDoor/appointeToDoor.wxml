@@ -1,0 +1,137 @@
+<!--pages/appointeToDoor/appointeToDoor.wxml-->
+<!-- 上门回收 -->
+<view class='outer' style="width: 100%; height: {{view.Height}}px;overflow:hidden">
+
+  <view>
+    <!-- 当前位置信息 begin!-->
+    <!-- <view class="v_location">
+      <image class="location_img" src="/images/icon_nowlocation.png"></image>
+      <text class="location_txt">徐州市铜山区</text>
+    </view> -->
+    <!-- end! 当前位置信息-->
+
+    <!-- 我的订单标题栏 begin! -->
+    <view class='order_tit clearfix'>
+      <view class="tit_txt">
+        <text>进行中的订单</text>
+      </view>
+      <view class="tit_txt" bindtap="moreOrder">
+        <text class="order_more">更多订单</text>
+        <image class="img_question" src="/images/icon_more.png"></image>
+      </view>
+      <view class='order_tips' bindtap="show">
+        <image class="img_question" src="/images/tips.png"></image>
+        <text>订单说明</text>
+      </view>
+    </view>
+    <!-- end! 我的订单标题栏  -->
+  </view>
+
+  <!-- 我的订单内容部分 begin! -->
+  <view class="{{main_order}}">
+    <!-- 暂无订单记录 begin! -->
+    <view class="{{nothing}}">
+      <image class="img_nothing" src="/images/img_noOrder.png"></image>
+      <view class="text_nothing">暂无订单记录~~</view>
+    </view>
+    <!-- end 暂无订单记录 -->
+    <!-- 订单信息列表 begin! -->
+    <block wx:for="{{orderList}}" wx:key="id">
+      <view class="{{order_inner}}">
+        <!-- 订单标题 begin! -->
+        <view class="inner_tit">
+          <image class="tit_img" src="/images/img_ordertit.png"></image>
+          <view class="tit_text">{{item.res_name}}</view>
+          <view class="btn_cancle" bindtap="cancleOrder" data-orderid="{{item.id}}">取消订单</view>
+          <view class="tit_status">{{item.orderStateName}}</view>
+        </view>
+        <!-- end! 订单标题 -->
+
+        <!-- 订单详细内容盒子 begin! -->
+        <view class='inner_detail'>
+          <view class="det_list">
+            <text class="list_tit">上门时间:</text>
+            <text>{{item.goTime || '空'}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">联系方式:</text>
+            <text class="list_tit">{{item.nick}}</text>
+            <text class="phone_num">{{item.mobile}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">预约信息:</text>
+            <text>{{item.remark}}</text>
+          </view>
+
+          <view class="img_box">
+            <image wx:for="{{item.imgList}}" wx:for-item="image" wx:key="*this" class="img_orderdtl" src="{{image}}" mode="aspectFill" bindtap="listenerButtonPreviewImage" data-url="{{image}}"></image>
+          </view>
+
+          
+
+          <view class="appointe_time">
+            <text class="list_tit">创建时间:</text>
+            <text>{{item.create_time || '空'}}</text>
+          </view>
+
+        </view>
+        <!-- end! 订单详细内容盒子 -->
+      </view>
+      <!-- end! 订单信息列表 -->
+      <!-- 订单列表 begin! -->
+      <view>
+
+      </view>
+
+    </block>
+    <!-- 订单列表 begin! -->
+
+    <!-- end! 订单列表  -->
+
+  </view>
+  <!-- end! 我的订单内容部分 -->
+
+  <!-- 预约按钮部分 begin！ -->
+  <button size="{{defaultSize}}" class="btn_active" style="{{status_css}}" disabled="{{disabled}}" bindtap="markOrder" hover-class="other-button-hover">预约上门</button>
+  <!-- <button type="{{btnType}}" size="{{defaultSize}}"   class="{{btnAppointe}}btn_defaule" style="{{status_css}}" disabled="{{disabled}}"  hover-class="other-button-hover">{{buttonText}}当前地区尚未开通上门回收服务</button> -->
+  <!-- end！预约按钮部分 -->
+
+
+  <!-- 遮罩层部分 begin！ -->
+  <view class="zhezao" hidden="{{flag}}">
+    <view class="t_w">
+
+      <!--右上角图标开始-->
+      <view class="t_image" bindtap="conceal">
+        <image class="t_image1" src="/images/icon_close.png"></image>
+      </view>
+      <!--右上角图标结束-->
+
+      <!--弹出框开始-->
+      <view class="tanchu_view">
+        <view>
+          <view class="bg_view">订单说明</view>
+          <view class="txtys">
+            <view>1、您可在回收员上门前取消预约。</view>
+            <view>2、上门前回收员将会与您联系并确认上门时间，请您根据实际情况合理安排。</view>
+            <view>3、预约后24H内无回收员接单，系统将自动取消您的预约，可更换时间再次预约。</view>
+            <view>4、回收员确认回收后，您可立即获取相应的积分或现金。</view>
+          </view>
+          <!--确定开始-->
+          <view class="txtsure">
+            <view class="txtsurebg" bindtap="conceal">
+              <text class="txtsurename">确认</text>
+            </view>
+          </view>
+          <!--确定结束-->
+        </view>
+      </view>
+      <!--弹出框结束-->
+    </view>
+  </view>
+  <!-- end！ 遮罩层 -->
+
+
+</view>

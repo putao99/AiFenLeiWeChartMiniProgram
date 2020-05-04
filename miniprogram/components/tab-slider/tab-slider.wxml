@@ -1,0 +1,48 @@
+<!--components/tab-slider/tab-slider.wxml-->
+
+
+<view class="tab-slider-container">
+  <view class="tab-slider-hd">
+    <view 
+      wx:for="{{tagList}}" 
+      wx:key="index" 
+      bindtap="tagIndexChange" 
+      data-index="{{index}}" 
+      class="tag-item {{index === currentIndex ? 'current' : ''}}" 
+      wx:for-item="tag"
+    >
+    {{tag.name}}
+    <view wx:if="{{tag.hasUnRead}}" class="unread"></view>
+    </view>
+    <view class="move-bar" style="width:{{moveBarWidth / 2}}px;transform: translate3d({{moveBarTransform + (moveBarWidth / 4)}}px,0,0);"></view>
+  </view>
+  <view class="tab-slider-bd">
+    <swiper 
+      class="swiper-container" 
+      style="height:{{height}}px;" 
+      current="{{currentIndex}}" 
+      bindchange="swiperChange" 
+      bindtransition="transitionChange" 
+      bindanimationfinish="animationfinishHandler" 
+      duration="250"
+    >
+      <swiper-item 
+        class="swiper-item swiper-item-{{index}}" 
+        wx:for="{{tagList}}" 
+        wx:key="index" 
+        wx:for-item="tag"
+      >
+        <scroll-view 
+          scroll-y 
+          class="scroll-view-wrap" 
+          style="height: {{height}}px;" 
+          bindscrolltolower="scrolltolowerHandler" 
+          bindscrolltoupper="scrolltoupperHandler" 
+          bindscroll="scrollHandler"
+        >
+          <slot name="swiper-{{index}}"></slot>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

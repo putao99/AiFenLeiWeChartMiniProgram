@@ -1,0 +1,115 @@
+<view id="wrapper-header">
+  <view class="binding-header">
+    <view class=" info-items weui-flex">
+      <view class="info-tips">用户名：</view>
+      <view class=" user-name weui-flex__item">{{nickname}}</view>
+    </view>
+
+    <view class="info-items weui-flex border-top">
+      <view class="info-tips">真实姓名：</view>
+      <view class="real-name weui-flex__item">{{username}}</view>
+    </view>
+
+    <view class="info-items weui-flex border-top">
+      <view class="info-tips">地址：</view>
+      <view class="address weui-flex__item">{{address}}</view>
+    </view>
+
+    <view class="info-items weui-flex border-top">
+      <view class="btn-wrap">
+        <button class="weui-btn mini-btn btn-scan " 
+        type="default" 
+        size="mini" 
+        bindtap="bindingAction" 
+        data-from="scan"
+        >扫码绑定</button>
+
+        <button 
+        class="weui-btn mini-btn btn-input" 
+        type="default" 
+        size="mini" 
+        bindtap="bindingAction" 
+        data-from="input"
+        >输码绑定</button>
+      </view>
+    </view>
+  </view>
+  <view class="warn-tips">操作说明：绑定的垃圾袋影响您的设备使用和积分获取，请谨慎操作！</view>
+  <view class="binding-title">已绑定垃圾袋</view>
+</view>
+
+<scroll-view 
+  scroll-y 
+  class="scroll-wrap" 
+  bindscrolltolower="scrolltolowerHandler" 
+  lower-threshold="5"
+  style="height: {{scrollHeight}}px;"
+>
+  <view class="binding-list">
+    <block wx:if="{{bindingList.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view wx:for="{{bindingList.data}}" wx:key="index" class="binding-item">
+        <view class="groups">
+          <view 
+            class="icon" 
+            data-id="{{item.id}}" 
+            data-qrcode="{{item.qrCode}}" 
+            bindtap="removeBag"
+            ></view>
+          <view class=" group weui-flex">
+            <view class="group-tips">垃圾袋类型：</view>
+            <view class="weui-flex__item">{{item.garbageTypeName}}</view>
+          </view>
+
+          <view class="group weui-flex border-top">
+            <view class="group-tips">垃圾袋号码：</view>
+            <view class="weui-flex__item">{{item.qrCode}}</view>
+          </view>
+
+          <view class="group weui-flex border-top">
+            <view class="group-tips">绑定时间：</view>
+            <view class="weui-flex__item">{{item.createTime}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+
+<dialog title="绑定垃圾袋" istrue="{{istrue}}" bind:closeDialog="closeDialog">
+  <view class="loading-input-wrap">
+    <input 
+        
+      value="{{inputValue}}" 
+      placeholder="请输入要绑定的垃圾袋二维码号码" 
+      class="loading-input" 
+      bindconfirm="confirmAction" 
+      bindinput="inputAction" 
+    ></input>
+  </view>
+  <view class="warn-tips" wx:if="{{hasInputError}}">{{errorTips}}</view>
+</dialog>
+
+<!-- <view class="loading-wrapper {{showTips ? 'active' : ''}}">
+  <view class="loading-main">
+    <view class="loading-title">绑定垃圾袋</view>
+    <view class="loading-content">
+      <view class="loading-input-wrap">
+        <input placeholder="请输入要绑定的垃圾袋二维码号码" class="loading-input" bindconfirm=""></input>
+      </view>
+    </view>
+    <view class="loading-action">
+      <view class="loading-btn loading-btn-cancel">取消</view>
+      <view class="loading-btn loading-btn-ok loading-btn-parmery">确认</view>
+    </view>
+  </view>
+</view> -->
+
+
+

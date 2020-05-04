@@ -1,0 +1,54 @@
+/* pages/selectVillage/selectVillage.wxss */
+.container{
+  background-color: #eee;
+  padding: 12rpx 0;
+}
+.top_search{
+   background-color: #fff;
+   padding: 20rpx 30rpx;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: no-wrap;
+   justify-content: space-between;
+   align-items: center;
+}
+.top_searchinput{
+  width: 80%;
+}
+.top_searchicon{
+  height: 40rpx;
+  width: 40rpx;
+}
+.list_wrap{
+  margin:20rpx;
+}
+.lister_itemscontainer{
+  display: block;
+  margin-bottom: 20rpx;
+  padding: 20rpx 36rpx;
+  background-color: #fff;
+}
+.list_itemsinner{
+  font-size: 15px;
+}
+.village_tit{
+  color: #555;
+}
+.village_name{
+  color: #222;
+}
+.hasNothing{
+  display: none;
+}
+.dishasNothing{
+   display:block;
+}
+.length0{
+  height: 80vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-size: 12px;
+}

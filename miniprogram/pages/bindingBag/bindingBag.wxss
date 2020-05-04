@@ -1,0 +1,200 @@
+page{
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #444;
+}
+.binding-header{
+  margin: 10px 10px 0 10px ;
+  background-color: #fff;
+  padding: 10px 20px 0 20px;
+  border-radius: 3px;
+  box-shadow: 1px 0 3px 0 rgba(39, 54, 78, 0.12);
+}
+
+.binding-main{
+  margin: 10px 10px 0 10px ;
+}
+.binding-title{
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 5px;
+  padding: 0 10px;
+  
+}
+
+.border-top{
+  position: relative;
+}
+.border-top::before{
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.1);
+}
+
+.info-items{
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-items .info-tips{
+  color: #888;
+  width: 100px;
+}
+.info-items .btn-wrap{
+  flex: 1;
+  text-align: right;
+  vertical-align: middle;
+}
+.info-items .btn-scan{
+  background-color: #52c8cc;
+  color: #fff;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.info-items .btn-input{
+  background-color: #528dcc;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+.warn-tips{
+  font-size: 10px;
+  color: red;
+  padding: 5px 10px 0 10px;
+}
+
+.no-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(0,0,0,.5);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.groups{
+  position: relative;
+  margin: 10px 10px 0 10px ;
+  background-color: #fff;
+  padding: 0 20px;
+  border-radius: 3px;
+}
+.group{
+  position: relative;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+.group .group-tips{
+  color: #888;
+  width: 100px;
+}
+.groups .icon{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 10;
+  width: 16px;
+  height: 16px;
+  padding: 5px;
+  overflow: hidden;
+
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAe1BMVEUAAAD1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBr1RBqdv4FqAAAAKHRSTlMAQLCQyd2L5jDUgojOmBAgxsG+qScKA7iOXzvw6qBOmnhZLPZ9bmkaSE/DIQAAANxJREFUOMvt0sduwzAURNGRKTlUScSi3lzS5v+/MIYdUJKlFATIxvBZkHjAXQ5GmVW+o2yKFbnhjMmxVLcMEidge8BSRO5SZ0fu4cjtJ0OWW6ecXBKaPzK/iUrISgihGVixYDvq0xdnONsw8LDgPXAD55+iori861ERvwGQSh+BTKtmNWrIHKjICHghxWrkkU+AOEcx+XiPbiyariD6Ksp1D2AIkwFokrD+bpkyw0km/7Zxy/YVC/tnWowqUtXySq3IGKPUJ7vwSkf675g4JFyRDJiRvfHnlOmPuPgAlno47EkQZa8AAAAASUVORK5CYII=) no-repeat center center;
+  background-size: 16px 16px;
+
+}
+
+
+/* loading... */
+.loading-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition:  all 0.2s linear;
+}
+.loading-wrapper.active{
+  z-index: 1000;
+  opacity: 1;
+  background-color: rgba(0,0,0,.3);
+}
+
+.loading-main{
+	display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0 20px;
+  background-color: #fff;
+  box-shadow: 1px 0 3px 0 rgba(39, 54, 78, 0.12);
+  border-radius: 3px;
+  width: 80%;
+  margin: 0 auto;
+}
+.loading-main > view{
+  flex: 1;
+}
+.loading-title{
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+.loading-content{
+  margin: 20px 0;
+}
+
+.loading-action{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  margin: 0 -20px;
+}
+.loading-action .loading-btn{
+  flex: 1;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+}
+.loading-action .loading-btn:first-child{
+  border-right: 1rpx solid rgba(0,0,0,.1);
+}
+.loading-btn-parmery{
+  color: #78C9CC;
+}
+
+.loading-input-wrap{
+  border: 1rpx solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  padding: 10px 15px;
+}
+.loading-input-wrap .loading-input{
+  height: 1.41176471em;
+  min-height: 1.41176471em;
+  line-height: 1.41176471;
+  font-size: 16px;
+}
+
+
+/* loading... END */

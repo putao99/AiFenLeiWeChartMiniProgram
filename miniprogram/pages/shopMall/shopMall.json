@@ -1,0 +1,9 @@
+{
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "积分商城",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

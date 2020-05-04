@@ -1,0 +1,108 @@
+/* pages/exchangeOrderDetial/exchangeOrderDetial.wxss */
+ @import "../../style/common.wxss";
+ @import "../../pages/shopExchangeOrder/shopExchangeOrder.wxss";
+.orderdetailwrap{
+  width: 100%;
+  padding:30rpx;
+  background-color: #f9f8f7;
+}
+.orderdetail-top{
+  background-color: #fff;
+  padding: 6rpx 28rpx 26rpx;
+  border-radius: 20rpx;
+  font-size:14px;
+}
+.item-list{
+  padding: 18rpx 0;
+  border-bottom: 1px solid #f9f8f7;
+  color: #666;
+}
+.list-tit{
+  float: left;
+  width: 30%;
+}
+.list-det{
+  float: left;
+  width: 70%;
+}
+.orderdetail-top~.orderdetail-top{
+  margin-top: 20rpx;
+}
+.fr{
+  float: right;
+}
+.bor-top{
+  padding-top: 24rpx;
+  border-top: 1px solid #f9f8f7;
+}
+.bor-top .address-tit{
+  float:left;
+  font-size:16px;
+  color:#333;
+  font-weight: normal;
+}
+.bor-top .text-det{
+  float:right;
+  font-size:18px;
+  font-weight:normal;
+  color:#00d8cb;
+}
+.canvas{
+  width: 270rpx;
+  height: 270rpx;
+}
+.exchange-bottom{
+  padding-top:20rpx;
+  border-top: 1px solid #f9f8f7;
+  display: flex;
+  justify-content: center;
+}
+.exchange-mid{
+  padding: 20rpx 0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+.order_inner.pad-top{
+  padding:0;
+  padding-top: 20rpx;
+}
+.exchangetop-tit{
+  margin-top: 20rpx;
+}
+.canvas-wrap{
+   position:relative;
+   height:270rpx;
+}
+.exchangestate{
+  background-color:rgba(0,0,0,.6);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.btn-canclechange{
+  float:right;
+color:#999;
+border:1px solid currentColor;
+font-size:14px;
+padding:10rpx 20rpx;
+height:60rpx;
+line-height:60rpx;
+display:inline-flex;
+align-items:center;
+border-radius:20px;
+margin:40rpx 0 0;
+}
+.btn-canclechange.go-cancle{
+  color:#00d8cb;
+}
+.orderdetailwrapnone{
+  display: none;
+}

@@ -1,0 +1,181 @@
+/* pages/user/user.wxss */
+@import "../../style/common.wxss";
+
+.container {
+  background-color: #eee;
+}
+
+.user_top {
+  width: 100%;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.user_top .nickname {
+  flex: 1;
+}
+
+.userinfo-nickname {
+  color: #101010;
+  font-size: 15px;
+}
+
+.uploda_IMG {
+  position: absolute;
+  bottom: 0rpx;
+  right: 0;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.icon_upload {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.head_photo {
+  position: relative;
+  margin-right: 20rpx;
+}
+
+.user_img {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user_detail {
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.detail_group {
+  padding: 16rpx 10rpx;
+  font-size: 14px;
+  color: #101010;
+}
+
+.detail_group~.detail_group {
+  border-top: 1px solid #eee;
+}
+
+.detail_icon {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 30rpx;
+}
+
+.group_list {
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
+.showadd {
+  margin-left: 46rpx;
+}
+
+/* 修改用户昵称弹窗样式 */
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 16rpx;
+}
+
+.modal-title {
+  padding-top: 40rpx;
+  font-size: 30rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 40rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 76rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #53f4eb;
+  text-align: center;
+}
+
+.weui-cells {
+  font-size: 15px;
+}
+
+.icon_imgs {
+  margin-right: 16px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}

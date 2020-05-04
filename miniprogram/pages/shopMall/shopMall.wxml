@@ -1,0 +1,180 @@
+<!--pages/shopMall/shopMall.wxml-->
+
+<view class='tab bg-w' style='min-height:{{view.Height}}px'>
+      <!-- begin! tab切换的按钮：头部 -->
+      <view class='tabHead_box'>
+          <view class='tab-head' bindtap="tabFun">
+              <view class="{{tabArr.curHdIndex=='0'?'active':''}}" id="tab-hd01" data-id="0" data-state="0" style="border-left:none;">全部商品</view>
+              <view class="{{tabArr.curHdIndex=='1'?'active':''}}" id='tab-hd02' data-id="1" data-state="1">兑换最多</view>
+              <view class="{{tabArr.curHdIndex=='2'?'active':''}}" id='tab-hd03' data-id="2" data-state='2'>库存最多</view>
+              <view class="{{tabArr.curHdIndex=='3'?'active':''}}" id='tab-hd04' data-id="3" data-state='3'>积分最少</view>
+          </view>
+      </view>
+      <!-- end! tab切换的按钮：头部 -->
+
+
+      <!-- begin! tab切换的主体内容：主体 -->
+      <view class='tab-content bg-w'> 
+      
+        <!-- begin! 全部商品主体内容部分！ -->
+        <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/img_noOrder.png'></image>
+              <view class="text_nothing">暂无商品~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+
+            <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" >
+                  <view class='media-left'>
+                    <!-- <image src='/images/pic_spt1.png'></image> -->
+                    <image src='{{item.imgUrl}}'></image>
+                  </view>
+                  <view class='media-body'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class='goods'>
+                        <text class="goods-numb">剩余{{item.surplus}}个</text>   
+                        <image src='/images/icon_loudou@2x.png' class="icon-funnel"></image>
+                      </view>
+                      <view class='clearfix'>
+                          <view class="exchange">{{item.score}}积分</view>
+                          <view data-goodsid='{{item.goodsId}}' data-goodsname="{{item.goodsName}}" data-score="{{item.score}}" class='btn-converse' bindtap="goExchange">兑换</view>
+                      </view>
+                  </view>
+
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                       
+                      </view>
+
+              </view>
+            </block>
+        </view>
+        <!-- end! 全部商品主体内容部分！ -->
+
+
+
+        <!-- begin! 兑换最多主体内容部分！ -->
+<view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/img_noOrder.png'></image>
+              <view class="text_nothing">暂无商品~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+<block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" >
+                  <view class='media-left'>
+                    <!-- <image src='/images/pic_spt1.png'></image> -->
+                    <image src='{{item.imgUrl}}'></image>
+                  </view>
+                  <view class='media-body'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class='goods'>
+                        <text class="goods-numb">剩余{{item.surplus}}个</text>   
+                        <image src='/images/icon_loudou@2x.png' class="icon-funnel"></image>
+                      </view>
+                      <view class='clearfix'>
+                          <view class="exchange">{{item.score}}积分</view>
+                          <view class='btn-converse' bindtap="goExchange" data-goodsid='{{item.goodsId}}' data-goodsname="{{item.goodsName}}" data-score="{{item.score}}">兑换</view>
+                      </view>
+                  </view>
+
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                       
+                      </view>
+
+              </view>
+            </block>
+        </view>
+        <!-- end! 兑换最多主体内容部分！ -->
+
+
+
+
+        <!-- begin! 库存最多主体内容部分！ -->
+<view class="right-item {{tabArr.curBdIndex=='2'?'active':''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/img_noOrder.png'></image>
+              <view class="text_nothing">暂无商品~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+ <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" >
+                  <view class='media-left'>
+                    <!-- <image src='/images/pic_spt1.png'></image> -->
+                    <image src='{{item.imgUrl}}'></image>
+                  </view>
+                  <view class='media-body'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class='goods'>
+                        <text class="goods-numb">剩余{{item.surplus}}个</text>   
+                        <image src='/images/icon_loudou@2x.png' class="icon-funnel"></image>
+                      </view>
+                      <view class='clearfix'>
+                          <view class="exchange">{{item.score}}积分</view>
+                          <view class='btn-converse' bindtap="goExchange" data-goodsid='{{item.goodsId}}' data-goodsname="{{item.goodsName}}" data-score="{{item.score}}">兑换</view>
+                      </view>
+                  </view>
+
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                       
+                      </view>
+              </view>
+            </block>
+        </view>
+        <!-- end! 库存最多主体内容部分！ -->
+
+        <!-- begin! 积分最少主体内容部分！ -->
+        <view class="right-item {{tabArr.curBdIndex=='3'?'active':''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/img_noOrder.png'></image>
+              <view class="text_nothing">暂无商品~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+
+             <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" >
+                  <view class='media-left'>
+                    <!-- <image src='/images/pic_spt1.png'></image> -->
+                    <image src='{{item.imgUrl}}'></image>
+                  </view>
+                  <view class='media-body'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class='goods'>
+                        <text class="goods-numb">剩余{{item.surplus}}个</text>   
+                        <image src='/images/icon_loudou@2x.png' class="icon-funnel"></image>
+                      </view>
+                      <view class='clearfix'>
+                          <view class="exchange">{{item.score}}积分</view>
+                          <view class='btn-converse' bindtap="goExchange" data-goodsid='{{item.goodsId}}' data-goodsname="{{item.goodsName}}" data-score="{{item.score}}">兑换</view>
+                      </view>
+                  </view>
+
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                       
+                      </view>
+              </view>
+            </block>
+        </view>
+
+        <!-- end! 积分最少主体内容部分！ -->
+
+
+
+      </view>
+      <!-- end! tab切换的主体内容：主体 -->
+
+        <!-- 一键回顶部按钮 -->
+        <image src='/images/icon_gotop.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>

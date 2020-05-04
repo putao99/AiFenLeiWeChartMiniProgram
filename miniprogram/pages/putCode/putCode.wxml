@@ -1,0 +1,42 @@
+<!--pages/putCode/putCode.wxml-->
+<view class="container">
+<view class="xg-main bgc_green">
+    <view class="xg-container bgc_green codr_container">
+        <view class="erwei_container" id="erwei_container">
+         <image class="img_erwei" src="{{imgUrl}}" mode="widthFix" alt="投放二维码"></image>
+
+         
+          <view class="p_erweitips">请将二维码对准扫描口，扫码投递垃圾</view>
+        </view>
+
+
+        <!-- <view class="class_group" id="class_group">
+            <block wx:for='{{typesArr}}' wx:key='item'>
+                <view class='btnItemView' catchtap='onItemClick' id = "{{index}}">
+                    <image wx:if="{{selTypeIndex == index}}" 
+                      data-index="{{index}}"
+                      src="{{item.activeSrc}}" 
+                      class="zwm_img" 
+                      binderror="errorFunctionA"  
+                      data-errorimg="{{item.code}}">
+                    </image>
+                  
+                    <image wx:else 
+                      data-index="{{index}}"
+                      src="{{item.normalSrc}}"  
+                      class="zwm_img" 
+                      data-imgCode="{{item.code}}" 
+                      binderror="errorFunctionN">
+                    </image>
+
+                    <text wx:if="{{selTypeIndex == index}}" style='color:#ea6f5a'>{{item.title}}</text>
+                    <text wx:else >{{item.title}}</text>
+                </view>
+            </block>
+			
+        </view> -->
+    </view>
+</view> 
+
+
+</view>

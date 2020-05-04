@@ -1,0 +1,231 @@
+<!--pages/shopExchangeOrder/shopExchangeOrder.wxml-->
+<!--pages/shopMall/shopMall.wxml-->
+<view class='tab' style='min-height:{{view.Height}}px'>
+      <!-- begin! tab切换的按钮：头部 -->
+      <view class='tabHead_box exchange-box'>
+          <view class='tab-head exchangetab' bindtap="tabFun">
+              <view class="{{tabArr.curHdIndex=='-1'?'active':''}}" id="tab-hd01" data-id="-1" data-state="-1">全部订单</view>
+              <view class="{{tabArr.curHdIndex=='0'?'active':''}}" id='tab-hd02' data-id="0" data-state="0">待兑换</view>
+              <view class="{{tabArr.curHdIndex=='1'?'active':''}}" id='tab-hd03' data-id="1" data-state='1'>已兑换</view>
+              <view class="{{tabArr.curHdIndex=='2'?'active':''}}" id='tab-hd04' data-id="2" data-state='2'>已取消</view>
+          </view>
+      </view>
+      <!-- end! tab切换的按钮：头部 -->
+
+
+      <!-- begin! tab切换的主体内容：主体 -->
+      <view class='tab-content exchange-content'> 
+      
+        <!-- begin! 全部订单主体内容部分！ -->
+        <view class="right-item {{tabArr.curBdIndex=='-1'? 'active' : ''}}">
+
+            <!-- begin! 暂无订单 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/icon_wddjl@2x.png'></image>
+              <view class="text_nothing">暂无商品兑换订单~</view>
+            </view>
+            <!-- end! 暂无订单 -->
+
+            <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}} " bindtap='goOrderDetail' data-orderid='{{item.id}}'>
+                  <view class='media-left posit-r'>
+                    <image src='{{item.imgUrl}}'></image>
+                    <view wx:if="{{item.state==1}}" class='shade'>已兑换</view>
+                    <view wx:elif="{{item.state==2}}" class='shade'>已取消</view>
+                    <view wx:else class='shade' hidden="true"></view>
+                  </view>
+                  <view class='media-body posit-r'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class="order-exchange">{{item.score}}积分</view>
+
+                      <view wx-if="{{item.state==0}}" class='clearfix posit-a'>
+                       <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="goExchange">
+                      <image src='/images/icon_exchbtn.png' class="icon-excerwei"></image> 
+                      <text>去兑换</text> 
+                       </view>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="cancleExchange" hidden='{{canclehidden}}'>取消兑换</view>
+                  </view>
+        <view  wx:else class='clearfix posit-a'>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-score="{{item.score}}" class='btn-lookdet' bindtap="goOrderDetail" hidden='{{hiddenDet}}'>查看详情</view>
+                      </view>
+                      
+                  </view>
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                    </view>
+              </view>
+            </block>
+        </view>
+        <!-- end! 全部订单主体内容部分！ -->
+
+
+
+        <!-- begin! 待兑换主体内容部分！ -->
+<view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/icon_wddjl@2x.png'></image>
+              <view class="text_nothing">暂无待兑换订单~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+       <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" bindtap='goOrderDetail' data-orderid='{{item.id}}'>
+                  <view class='media-left posit-r'>
+                    <image src='{{item.imgUrl}}'></image>
+                    <view wx:if="{{item.state==1}}" class='shade'>已兑换</view>
+                    <view wx:elif="{{item.state==2}}" class='shade'>已取消</view>
+                    <view wx:else class='shade' hidden="true"></view>
+                  </view>
+                  <view class='media-body posit-r'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class="order-exchange">{{item.score}}积分</view>
+
+                      <view wx-if="{{item.state==0}}" class='clearfix posit-a'>
+                       <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="goExchange">
+                      <image src='/images/icon_exchbtn.png' class="icon-excerwei"></image> 
+                      <text>去兑换</text> 
+                       </view>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="cancleExchange" hidden='{{canclehidden}}'>取消兑换</view>
+                  </view>
+        <view  wx:else class='clearfix posit-a'>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-score="{{item.score}}" class='btn-lookdet' bindtap="goOrderDetail" hidden='{{hiddenDet}}'>查看详情</view>
+                      </view>
+                      
+                  </view>
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                    </view>
+              </view>
+            </block>
+        </view>
+        <!-- end! 待兑换主体内容部分！ -->
+
+
+
+
+        <!-- begin! 已兑换主体内容部分！ -->
+<view class="right-item {{tabArr.curBdIndex=='1'?'active':''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/icon_wddjl@2x.png'></image>
+              <view class="text_nothing">暂无已兑换订单~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+       <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" bindtap='goOrderDetail' data-orderid='{{item.id}}'>
+                  <view class='media-left posit-r'>
+                    <image src='{{item.imgUrl}}'></image>
+                    <view wx:if="{{item.state==1}}" class='shade'>已兑换</view>
+                    <view wx:elif="{{item.state==2}}" class='shade'>已取消</view>
+                    <view wx:else class='shade' hidden="true"></view>
+                  </view>
+                  <view class='media-body posit-r'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class="order-exchange">{{item.score}}积分</view>
+
+                      <view wx-if="{{item.state==0}}" class='clearfix posit-a'>
+                       <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="goExchange">
+                      <image src='/images/icon_exchbtn.png' class="icon-excerwei"></image> 
+                      <text>去兑换</text> 
+                       </view>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="cancleExchange" hidden='{{canclehidden}}'>取消兑换</view>
+                  </view>
+        <view  wx:else class='clearfix posit-a'>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-score="{{item.score}}" class='btn-lookdet' bindtap="goOrderDetail" hidden='{{hiddenDet}}'>查看详情</view>
+                      </view>
+                      
+                  </view>
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                    </view>
+              </view>
+            </block>
+        </view>
+        <!-- end! 已兑换主体内容部分！ -->
+
+
+
+
+        <!-- begin! 已取消主体内容部分！ -->
+        <view class="right-item {{tabArr.curBdIndex=='2'?'active':''}}">
+
+            <!-- begin! 暂无商品 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/icon_wddjl@2x.png'></image>
+              <view class="text_nothing">暂无已取消订单~</view>
+            </view>
+            <!-- end! 暂无商品 -->
+
+         <block wx:for="{{orderList}}" wx:key="id">
+              <view class="{{order_inner}}" bindtap='goOrderDetail' data-orderid='{{item.id}}'>
+                  <view class='media-left posit-r'>
+                    <image src='{{item.imgUrl}}'></image>
+                    <view wx:if="{{item.state==1}}" class='shade'>已兑换</view>
+                    <view wx:elif="{{item.state==2}}" class='shade'>已取消</view>
+                    <view wx:else class='shade' hidden="true"></view>
+                  </view>
+                  <view class='media-body posit-r'>
+                      <view class='media-heading'>{{item.goodsName}}</view>
+                      <view class="order-exchange">{{item.score}}积分</view>
+
+                      <view wx:if="{{item.state==0}}" class='clearfix posit-a'>
+                       <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="goExchange">
+                      <image src='/images/icon_exchbtn.png' class="icon-excerwei"></image> 
+                      <text>去兑换</text> 
+                       </view>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-exchangeno="{{item.exchangeNo}}" class='btn-converse' catchtap="cancleExchange" hidden='{{canclehidden}}'>取消兑换</view>
+                  </view>
+        <view  wx:else class='clearfix posit-a'>
+                      <view data-orderid='{{item.id}}' data-state="{{item.state}}" data-score="{{item.score}}" class='btn-lookdet' bindtap="goOrderDetail" hidden='{{hiddenDet}}'>查看详情</view>
+                      </view>
+                      
+                  </view>
+                  <view class='media-tex'>
+                          <text class='address-tit' >【兑换地址】</text>
+                          <text class='text-det'>{{item.address}}</text>                    </view>
+              </view>
+            </block>
+        </view>
+
+        <!-- end! 已取消主体内容部分！ -->
+
+
+
+      </view>
+      <!-- end! tab切换的主体内容：主体 -->
+
+        <!-- 一键回顶部按钮 -->
+        <image src='/images/icon_gotop.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>
+
+<!-- 遮罩层部分 begin！ -->
+  <view class="zhezao" hidden="{{flag}}">
+    <view class="t_w">
+      <!--右上角图标开始-->
+      <view class="t_image" bindtap="conceal">
+        <image class="t_image1" src="/images/icon_close.png"></image>
+      </view>
+      <!--右上角图标结束-->
+
+      <!--弹出框开始-->
+      <view class="tanchu_view">
+        <view>
+          <view class="bg_view">请商家扫一下消费券</view>
+          <view class="txtys canvas-box">
+    <canvas class='canvas' canvas-id='canvas'></canvas>
+          </view>
+          <!--确定开始-->
+          <view class="txtsure">
+            <view class="txtsurebg">
+              <text class="txtsurename">兑换码：{{text}}</text>
+            </view>
+          </view>
+          <!--确定结束-->
+        </view>
+      </view>
+      <!--弹出框结束-->
+    </view>
+  </view>
+  <!-- end！ 遮罩层 -->

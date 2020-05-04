@@ -1,0 +1,83 @@
+/* pages/shopMall/shopMall.wxss */
+@import'../myOrders/myOrders.wxss';
+.tab-content.bg-w{
+  background-color: #fff;
+}
+.media-left{
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 20rpx;
+}
+.media-left image{
+  width:210rpx;
+  height:210rpx;
+  border-radius:12rpx;
+}
+.media-body{
+  display: table-cell;
+  vertical-align: top;
+  width: 1200px;
+}
+.media-heading{
+  color:#333;
+  font-size:16px;
+  font-weight:bold;
+  line-height: 1.42857;
+}
+.goods{
+  display:flex;
+align-items:center;
+}
+.goods-numb{
+  font-size:12px;
+  color:#00d8cb;
+}
+
+.media-tex{
+  line-height: 1.42857;
+}
+.address-tit{
+  font-weight: bold;
+}
+.exchange{
+  color:#00d8cb;
+  font-size:16px;
+  float:left;
+  font-weight: bold;
+
+}
+.icon-funnel{
+  width:16rpx;
+  height:20rpx;
+  margin-left: 6rpx;
+}
+.btn-converse{
+  float:right;
+  font-size:14px;
+  color:#00d8cb;
+  font-weight:bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width:142rpx;
+  height:56rpx;
+  padding: 14rpx 10rpx;
+  border:1px solid #00d8cb;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.text-det{
+  color: #666;
+  font-size: 14px;
+}
+.tab-content.bg-w .right-item.active .order_inner{
+  padding: 30rpx 20rpx;
+  border-bottom:1px solid #F0F0F0;
+}
+.tab.bg-w{
+  background: #fff;
+}
+.on_order_inner{
+  display: none;
+}
+

@@ -1,0 +1,33 @@
+<view class='address_con' style='height: {{view.Height}}px;'>
+
+ <!-- 暂无订单记录 begin! -->
+    <view class="{{nothing}}">
+      <image class="img_nothing" src="/images/noAddress.png"></image>
+      <view class="text_nothing">暂无上门地址~~点击下方新增地址</view>
+    </view>
+    <!-- end 暂无订单记录 -->
+
+<view class="{{adressitem}}">
+    <image class="check_status" src="/images/check.png"  mode = "widthFix"/>
+  <view class = "info">
+    <text class="info_user">{{nick}}，{{mobile}}</text>
+    <text class="info_address">地址：{{addressComp}}</text>
+  </view>
+  <view class ="modify" bindtap="toModifyAddre">
+  <image class="icon_modify" src = "/images/icon_edite.png"
+    mode = "widthFix" />
+  </view>
+</view>
+ 
+
+<view class="add_view" bindtap ="addAddre" wx:if="{{!hasAddress}}">
+	<image  class ="add_icon"  src = "/images/icon_jia.png"
+    mode = "widthFix" />
+    <view class="add_text">新增个人地址</view>
+    <image class="add_editads" src = "/images/icon_more.png"
+    mode = "widthFix" />
+</view>
+
+
+</view>
+

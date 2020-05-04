@@ -1,0 +1,63 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.0",
+	"appid": "wx34aef02742786323",
+	"projectname": "555",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "上门回收",
+					"pathName": "pages/appointeToDoor/appointeToDoor",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "我的订单",
+					"pathName": "pages/myOrders/myOrders",
+					"query": "status=1&userName=17625168896"
+				},
+				{
+					"id": -1,
+					"name": "EditOrder",
+					"pathName": "pages/editOrder/editOrder",
+					"query": ""
+				}
+			]
+		}
+	}
+}

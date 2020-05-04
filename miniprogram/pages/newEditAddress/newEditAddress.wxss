@@ -1,0 +1,37 @@
+/* pages/newEditAddress/newEditAddress.wxss */
+
+@import "../../style/common.wxss";
+@import "../editOrder/editOrder.wxss";
+@import "../myaddress/myaddress.wxss";
+
+.provinces{
+  display: block;
+  width: 60%;
+  margin-right: 12rpx;
+}
+.noProvinces{
+  display: none;
+}
+.adr_input{
+  margin-right: 10rpx;
+}
+.hidadsPicker{
+  display: none;
+}
+.adsPicker{
+  display: block;
+}
+.hidInput{
+  display: none;
+}
+.address_input{
+  display: block;
+}
+.disvillageInput{
+  display: none
+}
+.villageInput{
+  display: block;
+  text-align: center;
+  margin-left: 15%;
+}

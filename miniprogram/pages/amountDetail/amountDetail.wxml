@@ -1,0 +1,31 @@
+<!--pages/amountDetail/amountDetail.wxml-->
+<view class="container">
+
+  <view class="delivery_list">
+       <view class='list_coontainer'>
+              <view  class="{{disPlay}}">
+                  <image class="img_nodata" src="/images/img_nodata.png"></image>
+                  <view class='text_nodata'>暂无微信提现记录~</view>
+              </view>
+       <block wx:for="{{errmsgList}}" wx:key="*this">
+            <view  class='list_inner'>
+                    <view class='widthdraw'>
+                          <view class='left'>
+                           <view wx:if="{{item.status === 1}}" class="succet">{{item.statusName}}</view>
+          <view wx:if="{{item.status === 2}}" class="falset">{{item.statusName}}</view>
+                              <!-- <view class="{{item.status}}">{{item.statusName}}</view> -->
+                              <view class="p-type">{{item.createTime}}</view>
+                          </view>
+
+                          <view class='right'>
+                          <view wx:if="{{item.status === 1}}" class="succet">{{item.contMoney}}</view>
+          <view wx:if="{{item.status === 2}}" class="falset">{{item.contMoney}}</view>
+                    <!-- <view class="{{item.status}}">{{item.contMoney}}</view> -->
+                          </view>
+                    </view>
+
+              </view>
+       </block> 
+       </view> 
+</view>
+</view>

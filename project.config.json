@@ -1,0 +1,165 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"appid": "wx34aef02742786323",
+	"projectname": "%E5%BE%B7%E6%BE%9C%E4%BB%95%E6%99%BA%E8%83%BD%E5%9B%9E%E6%94%B6",
+	"libVersion": "2.10.0",
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "个人中心",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的钱包",
+					"pathName": "pages/wallet/wallet",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "投递记录",
+					"pathName": "pages/deliveryRecord/deliveryRecord",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的投放码",
+					"pathName": "pages/putCode/putCode",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "注册",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "余额明细",
+					"pathName": "pages/amountDetail/amountDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "身份识别",
+					"pathName": "pages/identify/identify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "扫一扫开门",
+					"pathName": "pages/scanCode/scanCode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "附近回收机",
+					"pathName": "pages/nearbyEquipment/nearbyEquipment",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "上门回收",
+					"pathName": "pages/appointeToDoor/appointeToDoor",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "我的预约订单",
+					"pathName": "pages/myOrders/myOrders",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "填写预约订单",
+					"pathName": "pages/editOrder/editOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的地址",
+					"pathName": "pages/myaddress/myaddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑新增地址详细信息页面",
+					"pathName": "pages/newEditAddress/newEditAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已订阅",
+					"pathName": "pages/myCourse/myCourse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

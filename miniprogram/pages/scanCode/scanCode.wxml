@@ -1,0 +1,2 @@
+<!--pages/scanCode/scanCode.wxml-->
+<view>{{show}}</view> 

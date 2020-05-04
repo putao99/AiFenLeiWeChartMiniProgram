@@ -1,0 +1,84 @@
+/* pages/myaddress/myaddress.wxss */
+@import "../../style/common.wxss";
+@import "../editOrder/editOrder.wxss";
+.address_con{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  }
+  .dark_notation{
+    font-size: 12px;
+      color: #a09e9e;
+}
+.dark_notation{
+  font-size: 12px;
+  color: #a09e9e;
+}
+.address_input{
+  width: 60%;
+  margin-left: 15%;
+  margin-right: 12rpx;
+  padding: 10rpx 0 10rpx 10rpx;
+  border: 1px solid #a09e9e;
+  border-radius: 10rpx;
+}
+.red_star{
+  position: absolute;
+  left: 15%;
+  color: red;
+}
+.recycle_li.bordertop_none{
+  border-top: none;
+  margin-top: 30rpx;
+}
+
+.adressitem{
+  width: 100%;
+   padding: 20rpx;
+   box-sizing: border-box;
+   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.none_adressitem{
+  display: none;   /* 用户无地址，地址容器不显示 */
+}
+.check_status{
+  height:40rpx;
+  width:40rpx;
+  margin-right: 16rpx;
+}
+.info{
+  width: 80%;
+}
+.icon_modify{
+  height:40rpx;
+  width:40rpx;
+  margin-left:16rpx;
+}
+.info_user,.info_address{
+  display: block;
+  width:100%;
+}
+.add_view{
+  width: 100%;
+  padding: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 16rpx;
+}
+.add_text{
+  width: 90%;
+}
+.add_icon{
+  width:40rpx;
+  height:40rpx;
+  margin-right: 16rpx;
+}
+.add_editads{
+    width:40rpx;
+  height:40rpx;
+  margin-left: 16rpx;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    
+  },
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "积分明细",
+  "navigationBarTextStyle": "black"
+}

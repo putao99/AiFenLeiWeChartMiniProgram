@@ -1,0 +1,74 @@
+<view class="groups-title">我的账号</view>
+<view class="groups">
+	<view class=" group weui-flex">
+		<view class="user-avatar-wrap">
+			<image src="{{bindingList.data.customer.headPic}}" class="user-avatar"></image>
+		</view>
+		<view class="weui-flex__item">
+			<view class="weui-flex weui-flex-v">
+				<view>{{bindingList.data.customer.nick}}-{{bindingList.data.customer.username}}</view>
+				<view>{{bindingList.data.customer.cardNumber}}</view>
+			</view>
+		</view>
+		<view class="account-type" wx:if="{{bindingList.data.customer.typeId === 1}}">主账号</view>
+	</view>
+
+	<view class="group weui-flex border-top">
+		<view class="weui-flex__item btn-wrap">
+
+
+			<button class="weui-btn mini-btn btn-primary " type="default" size="mini" bindtap="onBindingMainActionTap" data-typeid="{{bindingList.data.customer.typeId}}" disabled="{{bindingList.data.customer.typeId == undefined || (bindingList.data.customer.typeId === 1 || bindingList.data.customer.typeId === 2)}}">关联主账号</button>
+
+			<button class="weui-btn mini-btn btn-default" type="default" size="mini" bindtap="onBindingBelongActionTap" data-typeid="{{bindingList.data.customer.typeId}}" disabled="{{bindingList.data.customer.typeId == undefined || bindingList.data.customer.typeId === 2}}">关联子账号</button>
+
+		</view>
+	</view>
+</view>
+
+<block wx:if="{{bindingList.data.belongId.length > 0}}">
+	<view class="groups-title">家庭绑定的账号</view>
+	<view class="groups">
+		<view class=" group weui-flex border-top" wx:for="{{bindingList.data.belongId}}" wx:key="index">
+			<view class="user-avatar-wrap">
+				<image src="{{item.headPic}}" class="user-avatar"></image>
+			</view>
+			<view class="weui-flex__item">
+				<view class="weui-flex weui-flex-v">
+					<view>{{item.nick}}-{{item.username}}</view>
+					<view>{{item.cardNumber ? item.cardNumber : '无卡号'}}</view>
+				</view>
+			</view>
+			<view class="account-type" wx:if="{{item.typeId === 1}}">主账号</view>
+		</view>
+
+
+
+
+	</view>
+</block>
+
+<view class="tips-wrap">
+	<view class="tips-title">操作说明：</view>
+	<view class="tips-content">
+		<view>1.账号绑定后，不可删除。全家积分会叠加到主账户上，其他家庭成员可共享查看并使用积分。</view>
+		<view>2.免费领取垃圾袋等福利，以家庭为单位计算领取次数。</view>
+		<view>3.一个账号只能绑定一个家庭，一个家庭只有一个主账户，可有多个子账户。且主账户可查看子账户使用信息。</view>
+	</view>
+</view>
+
+
+<dialog title="账户关联确认" primary-text="确认关联" istrue="{{istrue}}" bind:closeDialog="closeDialog">
+	<!-- <view class="title-tips">验证关联账号的信息</view> -->
+	<view class="dialog-account-wrap">
+		<view class="dialog-account-tips">关联的账号：</view>
+		<view class="dialog-account-number">{{qrCodeAccount}}</view>
+	</view>
+	<view class="dialog-input-wrap">
+		<input value="{{inputValue}}" placeholder="请输入关联账号的密码" class="dialog-input" bindconfirm="confirmAction" bindinput="inputAction"></input>
+	</view>
+	<view class="dialog-action-tips-wrap">
+		<view class="dialog-action-tips-title">操作提示：</view>
+		<view class="dialog-action-tips">关联后获得的积分累计到主账户，且不可取消关联！</view>
+	</view>
+	<view class="warn-tips" wx:if="{{hasInputError}}">{{errorTips}}</view>
+</dialog>

@@ -1,0 +1,136 @@
+<!--pages/wallet/wallet.wxml-->
+<!-- <view class="container">
+      <view class="wdf_main">
+          <view class="container_middle">
+                  <view class='img_cash'>
+                    <image src='/images/img_cash.png'></image>
+                  </view>
+                  <view class='cash_tit'>当前账户积分</view>
+                  <view class='cash_num cash_fen'>{{Score}}</view>
+                  <view class='lookdiv' bindtap='goAmountDetail'>
+                    <text class='cash-btn arrows_after'>查看提现明细</text>
+                  </view>
+          </view>
+          <view class='wdf_foot'>
+              <button loading="{{loading}}" 
+    disabled="{{disabled}}" bindtap="withDraw" class="wdf-btn-submit">{{withDrawTxt}}</button>
+          </view>
+      </view>
+
+      <block wx:if="{{showTips}}">
+          <view class="loading-wrapper">
+                <view class="loading-main">
+                      <view class="loading"></view>
+                      <view class="loading-content">审核处理中，请稍候...</view>
+                </view>
+          </view>
+      </block>
+</view> -->
+
+
+<view class="wdf_main">
+  <view class="container_middle" style="position:fixed;top:0;left:0;background:#fff;width:100%;box-shadow:  1px 0 5px 0 rgba(39, 54, 78, 0.12);">
+    <view class='cash_num cash_fen'>积分余额：{{Score}} 积分</view>
+    <view class='cash_tit'>
+      <view class='order_tips' bindtap="show">
+        <view class="flex-space">
+          <text style="font-size:32rpx;">可提现金额：{{WithdrawalAmount}} 元</text>
+        </view>
+        <view class="flex-space">
+          <image class="img_question" src="/images/tips.png"></image>
+          <text>提现规则</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+  <view class="container_middle" style="margin-top:85px;">
+    <view class='tx_wrap'>提现明细</view>
+
+    <view class="delivery_list">
+      <view class='list_coontainer'>
+        <view class="{{disPlay}}">
+          <image class="img_nodata" src="/images/img_nodata.png"></image>
+          <view class='text_nodata'>暂无微信提现记录~</view>
+        </view>
+        <block wx:for="{{errmsgList}}" wx:key="*this">
+          <view class='{{list_inner}}'>
+            <view class='widthdraw'>
+              <view class='left'>
+                <view wx:if="{{item.status === 1}}" class="succet">{{item.statusName}}</view>
+                <view wx:else class="falset">{{item.statusName}}</view>
+                <view class="p-type">{{item.createTime}}</view>
+                 <view class="p-type">原因：{{item.result}}</view>
+              </view>
+
+              <view class='right'>
+                <view wx:if="{{item.status === 1}}" class="succet">{{item.contMoney}}</view>
+                <view wx:else class="falset">{{item.contMoney}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='wdf_foot'>
+    <button loading="{{loading}}" disabled="{{disabled}}" bindtap="withDraw" class="wdf-btn-submit">{{withDrawTxt}}</button>
+  </view>
+  <block wx:if="{{showTips}}">
+    <view class="loading-wrapper">
+      <view class="loading-main">
+        <view class="loading"></view>
+        <view class="loading-content">审核处理中，请稍候...</view>
+      </view>
+    </view>
+  </block>
+
+
+  <!-- 遮罩层部分 begin！ -->
+  <view class="zhezao" hidden="{{flag}}">
+    <view class="t_w">
+
+      <!--右上角图标开始-->
+      <view class="t_image" bindtap="conceal">
+        <image class="t_image1" src="/images/icon_close.png"></image>
+      </view>
+      <!--右上角图标结束-->
+
+      <!--弹出框开始-->
+      <view class="tanchu_view">
+        <view>
+          <view class="bg_view">提现规则</view>
+          <view class="txtys">
+            <view>1、每日最多可提现一次。</view>
+            <view>2、提现金额范围为1~200元（不含200），具体规则如下：可提现金额不足1元不可提现；可提现金额在1~100元（不含100），默认全额提现；可提现金额在100~200元的，需提交管理员审核。</view>
+            <view>3、账户积分3次人为变更或单次大额变更视为账户异常不可提现，需提交提现审核。</view>
+          </view>
+          <!--确定开始-->
+          <view class="txtsure">
+            <view class="txtsurebg" bindtap="conceal">
+              <text class="txtsurename">确认</text>
+            </view>
+          </view>
+          <!--确定结束-->
+        </view>
+      </view>
+      <!--弹出框结束-->
+    </view>
+  </view>
+  <!-- end！ 遮罩层 -->
+
+
+
+
+  <modal hidden="{{hiddenmodalput}}" title="提现申请" confirm-text="确认" cancel-text="取消" bindcancel="cancelM" bindconfirm="confirmM">
+    <view>本次提现超过{{moneyMin}}元，需要提交提现申请，由管理员审核之后才能提现。本次提现申请金额为：</view>
+    <input class="cashinput" value="{{cashAmount}}" bindinput='isCashAmount' bindblur="validateNumber" type="number" placeholder="请输入本次提现金额" auto-focus maxlength="3" />
+    <view class="wxwarn">(微信单次提现不可大于200元)</view>
+  </modal>
+
+
+</view>

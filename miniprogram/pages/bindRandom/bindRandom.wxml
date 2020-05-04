@@ -1,0 +1,8 @@
+<!--pages/bindRandom/bindRandom.wxml-->
+<view class="randomwrap">
+<view class="input-groups">
+    <text class="txt_tit">随机卡绑定:</text>
+     <input class="weui-input randominput" bindinput="bindRandomInput" value="{{inputValue}}" auto-focus placeholder="请输入随机卡号" disabled="{{inputDis}}"/>
+</view>
+  <button data-randomvalue="{{inputValue}}" class="{{randombtn}}" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="randomBind" hover-class="other-button-hover" style=" background-color: #78C9CC;">确认</button>
+</view>

@@ -1,0 +1,203 @@
+<!--pages/myOrders/myOrders.wxml-->
+
+<view class="tab" style='min-height:{{view.Height}}px'>
+
+  <view class="tabHead_box">
+    <view class="tab-head" bindtap="tabFun">
+      <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0" data-status="1" style='border-left:none;'>进行中</view>
+      <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1" data-status="3">交易完成 </view>
+      <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2" data-status="2">交易取消 </view>
+    </view>
+  </view>
+
+
+  <view class="tab-content">
+
+    <!-- part 进行中的订单 begin! -->
+    <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}" >
+
+    <!-- 暂无订单记录 begin! -->
+        <view class="{{nothing}}">
+          <image class="img_nothing" src="/images/img_noOrder.png"></image>
+          <view class="text_nothing">暂无订单记录~~</view>
+        </view>
+    <!-- end 暂无订单记录 -->
+
+
+    <block wx:for="{{orderList}}" wx:key="id">
+      <view class="{{order_inner}}">
+        <!-- 订单标题 begin! -->
+        <view class="inner_tit">
+          <image class="tit_img" src="/images/img_ordertit.png"></image>
+          <view class="tit_text">{{item.res_name}}</view>
+          <view class="btn_cancle" bindtap="cancleOrder" data-orderid="{{item.id}}">取消订单</view>
+          <view class="tit_status">{{item.orderStateName}}</view>
+        </view>
+        <!-- end! 订单标题 -->
+
+        <!-- 订单详细内容盒子 begin! -->
+        <view class='inner_detail'>
+          <view class="det_list">
+            <text class="list_tit">上门时间:</text>
+            <text>{{item.goTime || '空'}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">联系方式:</text>
+            <text class="list_tit">{{item.nick}}</text>
+            <text class="phone_num">{{item.mobile}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">预约信息:</text>
+            <text>{{item.remark}}</text>
+          </view>
+
+          <view class="img_box">
+            <image wx:for="{{item.imgList}}" wx:for-item="image" wx:key="*this" class="img_orderdtl" src="{{image}}" mode="aspectFill" bindtap="listenerButtonPreviewImage" data-url="{{image}}"></image>
+          </view>
+
+          <view class="appointe_time">
+            <text class="list_tit">创建时间:</text>
+            <text>{{item.create_time || '空'}}</text>
+          </view>
+
+        </view>
+        <!-- end! 订单详细内容盒子 -->
+      </view>
+      <!-- end! 订单信息列表 -->
+      <!-- 订单列表 begin! -->
+      <view>
+
+      </view>
+
+    </block>
+</view>
+
+
+    <!-- part 交易完成的订单 begin！ -->
+    <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}" >
+ <!-- 暂无订单记录 begin! -->
+        <view class="{{nothing}}">
+          <image class="img_nothing" src="/images/img_noOrder.png"></image>
+          <view class="text_nothing">暂无订单记录~~</view>
+        </view>
+    <!-- end 暂无订单记录 -->
+     <block wx:for="{{orderList}}" wx:key="id">
+      <view class="{{order_inner}}">
+        <!-- 订单标题 begin! -->
+        <view class="inner_tit">
+          <image class="tit_img" src="/images/img_ordertit.png"></image>
+          <view class="tit_text">{{item.res_name}}</view>
+          <view class="btn_cancle" bindtap="deleteOrder" data-orderid="{{item.id}}" data-orderstate="{{item.order_state}}">删除订单</view>
+        </view>
+        <!-- end! 订单标题 -->
+
+        <!-- 订单详细内容盒子 begin! -->
+        <view class='inner_detail'>
+
+         <view class="det_list">
+            <text class="list_tit">交易方式:</text>
+            <text wx:if="{{item.restore ===1}}">积分返还</text>
+            <text wx:if="{{item.restore ===2}}">现金回收</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">交易金额:</text>
+            <text wx:if="{{item.restore ===1}}">{{item.total_money|| '0'}}积分</text>
+            <text wx:if="{{item.restore ===2}}">{{(item.total_money / 100) || '空' }}元</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">上门时间:</text>
+            <text>{{item.goTime || '空'}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">联系方式:</text>
+            <text class="list_tit">{{item.nick}}</text>
+            <text class="phone_num">{{item.mobile}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">预约信息:</text>
+            <text>{{item.remark}}</text>
+          </view>
+
+          <view class="img_box">
+            <image class="img_orderdtl" wx:for="{{item.imgList}}" wx:for-item="image" wx:key="*this" class="img_orderdtl" src="{{image}}" mode="aspectFill" bindtap="listenerButtonPreviewImage" data-url="{{image}}"></image> 
+          </view>
+
+          <view class="appointe_time">
+            <text class="list_tit">预约时间:</text>
+            <text>{{item.create_time || '空'}}</text>
+          </view>
+
+        </view>
+        <!-- end! 订单详细内容盒子 -->
+      </view>
+      <!-- end! 订单信息列表 -->
+
+      </block>
+    </view>
+    <!--end! part 交易完成的订单 -->
+
+
+
+
+    <!-- part 交易取消的订单 begin! -->
+    <view class="right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+     <!-- 暂无订单记录 begin! -->
+        <view class="{{nothing}}">
+          <image class="img_nothing" src="/images/img_noOrder.png"></image>
+          <view class="text_nothing">暂无订单记录~~</view>
+        </view>
+    <!-- end 暂无订单记录 -->
+    <block wx:for="{{orderList}}" wx:key="id">
+      <view class="{{order_inner}}">
+        <!-- 订单标题 begin! -->
+        <view class="inner_tit">
+          <image class="tit_img" src="/images/img_ordertit.png"></image>
+          <view class="tit_text">{{item.res_name}}</view>
+          <view class="btn_cancle" bindtap="deleteOrder" data-orderid="{{item.id}}" data-orderstate="{{item.order_state}}">删除订单</view>
+        </view>
+        <!-- end! 订单标题 -->
+
+        <!-- 订单详细内容盒子 begin! -->
+        <view class='inner_detail'>
+          <view class="det_list">
+            <text class="list_tit">取消原因:</text>
+            <text class="cancle_reason">{{item.refuseName}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">联系方式:</text>
+            <text class="list_tit">{{item.nick}}</text>
+            <text class="phone_num">{{item.mobile}}</text>
+          </view>
+
+          <view class="det_list">
+            <text class="list_tit">预约信息:</text>
+            <text>{{item.remark}}</text>
+          </view>
+
+          <view class="img_box">
+            <image class="img_orderdtl" wx:for="{{item.imgList}}" wx:for-item="image" wx:key="*this" class="img_orderdtl" src="{{image}}" mode="aspectFill" bindtap="listenerButtonPreviewImage" data-url="{{image}}"></image>
+          </view>
+
+          <view class="appointe_time">
+            <text class="list_tit">预约时间:</text>
+            <text>{{item.create_time || '空'}}</text>
+          </view>
+
+        </view>
+        <!-- end! 订单详细内容盒子 -->
+      </view>
+      <!-- end! 订单信息列表 -->
+      </block>
+      <!--end! 订单列表 -->
+    </view>
+  </view>
+  <!-- end! part 交易取消的订单 -->
+
+</view>

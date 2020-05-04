@@ -1,0 +1,130 @@
+page{
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #444;
+}
+.weui-flex-v{
+  flex-direction: column;
+}
+
+.groups{
+  position: relative;
+  background-color: #fff;
+  padding: 0 20px;
+  border-radius: 3px;
+}
+.groups-title{
+  font-size: 14px;
+  color: #666;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 20px;
+}
+.group{
+  position: relative;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+.group .group-tips{
+  color: #888;
+  width: 100px;
+}
+.border-top{
+  position: relative;
+}
+.border-top::before{
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.1);
+}
+
+.group .btn-wrap{
+  flex: 1;
+  text-align: right;
+  vertical-align: middle;
+}
+.group .btn-primary{
+  background-color: #52c8cc;
+  color: #fff;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.group .btn-default{
+  background-color: #528dcc;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.user-avatar-wrap{
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-avatar-wrap .user-avatar{
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+
+}
+
+.tips-wrap{
+  margin: 20px;
+
+}
+.tips-wrap .tips-title{
+  font-size: 14px;
+  font-weight: 700;
+}
+.tips-wrap .tips-content{
+  font-size: 12px;
+  color: #888;
+}
+
+.dialog-account-wrap{
+  font-size: 14px;
+  text-align: left;
+}
+
+.dialog-input-wrap{
+  border: 1rpx solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+.dialog-input-wrap .dialog-input{
+  height: 1.41176471em;
+  min-height: 1.41176471em;
+  line-height: 1.41176471;
+  font-size: 16px;
+  font-weight: 700;
+  color: #444 !important;
+}
+
+.dialog-action-tips-wrap{
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: left;
+}
+.dialog-account-tips,.dialog-action-tips-title{
+  color: #576b95;
+}
+.dialog-account-number{
+  font-weight: bold;
+}
+
+.warn-tips{
+  font-size: 13px;
+  color: red;
+  padding: 5px 10px 0 10px;
+}

@@ -1,0 +1,168 @@
+/* pages/editOrder/editOrder.wxss */
+@import "../../style/common.wxss";
+.editform{
+  font-size: 14px;
+}
+.xg-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+        .recycle-container{
+          width: 100%;
+            background-color: #f2f2f2;
+            box-sizing: border-box;
+        }
+        .submit_nomal{
+            letter-spacing: 16px;
+            color: #fff;
+            font-size: 14px;
+        }
+        .wdf_recycle{
+            padding:12rpx 34rpx;
+            background-color: #fff;
+        }
+        .recycle_iterm{
+
+        }
+        .recycle_li{
+            height: 76rpx;
+            line-height: 76rpx;
+            padding-left: 16rpx;
+           display: flex;
+           align-items: center;
+        }
+        .recycle_li~.recycle_li{
+            border-top: 1px solid #f2f2f2;
+        }
+        .star_mast{
+            color: red;
+            position: absolute;
+            left: 20rpx;
+            padding-top: 10rpx;
+        }
+        .recycle_tit{
+            display: inline-block;
+            min-width: 20%;
+        }
+        .recycle_input{
+            border: none;
+            line-height: 56rpx;
+            display: inline-block;
+        }
+        .wdf_note{
+            background: #f2f2f2;
+            border: 1px solid #dddbdc;
+            width: 80%;
+            height: 160rpx;
+            font-size: 1em;
+            border-radius: 8rpx;
+            padding: 20rpx 3% 40rpx 3%;
+            margin-left: 14%;
+        }
+        .wdf_aupload{
+            margin-top: 12rpx;
+            background-color: #fff;
+            padding: 12rpx 34rpx;
+        }
+        .type_select{
+            width: 50%;
+            border: 1px solid #f2f2f2;
+            padding: 8rpx;
+            border-radius: 8rpx;
+        }
+        .upload_tit{
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .span_tips {
+            color: #a09e9e;
+            font-size: 12px;
+            position: absolute;
+            right: 24rpx;
+        }
+        .up_loadimg {
+            padding: 16rpx 0;
+        }
+        .upload-ul {
+            position: relative;
+            display: inline-block;
+        }
+        .up_loadimg .xg_uploadul {
+            max-width: 100%;
+            width: 100%;
+        }
+        .up_loadimg .xg_uploadul li {
+            width: 150rpx;
+            height: 150rpx;
+            margin: 20rpx 20rpx 0;
+            border-radius: 20rpx;
+        }
+        .up_loadimg .xg_uploadul li:nth-child(4){
+            margin-right: 0;
+        }
+        .upload-pick {
+          max-width: 100%;
+          height: 200rpx;
+          display: flex;
+          flex-direction:row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .wdf_remark{
+            margin-top: -56rpx;
+            position: relative;
+        }
+        .p_limit{
+            position: absolute;
+            right: 12rpx;
+            bottom: 12rpx;
+            color: #666;
+        }
+
+        .wdf_foot {
+            width: 100%;
+            max-width: 640px;
+            position: fixed;
+            bottom: 40rpx;
+        }
+
+        .wdf-btn-submit {
+          display: block;
+          width: 56%;
+          background-color: #06d1c7;
+          margin: 0 auto;
+          padding: 0 70rpx;
+          height: 76rpx;
+          line-height: 76rpx;
+          border-radius: 76rpx;
+          text-align: center;
+          font-size: 14px;
+        }
+      .mobile{
+        color:#06d1c7
+      }
+
+      .webuploader-container{
+        height: 160rpx;
+        width: 160rpx;
+       margin-bottom: 20rpx;
+      }
+      .item_photos{
+        width: 160rpx;
+        height: 160rpx;
+        margin-left: 12rpx;
+        margin-bottom: 20rpx;
+      }
+      .address_textarea{
+        width: 78%;
+        line-height: 55rpx;
+        height: 110rpx;
+        color: #a09e9e;
+      }
+      .dis_edit{
+        color: #a09e9e;
+      }

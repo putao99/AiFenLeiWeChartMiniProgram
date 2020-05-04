@@ -1,0 +1,34 @@
+/* pages/bindRandom/bindRandom.wxss */
+
+.input-groups {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+  padding: 16rpx 28rpx;
+  margin: 40rpx auto;
+  width: 86%;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+}
+
+.txt_tit {
+  width: 28%;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.randominput {
+  width: 72%;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.randombtn {
+  width: 70%;
+  margin: 20rpx auto;
+}
+.randombtnDis{
+  display: none;
+}

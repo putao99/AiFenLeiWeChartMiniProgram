@@ -1,0 +1,321 @@
+/* pages/appointeToDoor/appointeToDoor.wxss */
+@import "../../style/common.wxss";
+button::after {
+  border: none;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.outer {
+  width: 100%;
+  background-color: #fbf9f9;
+}
+
+.v_location {
+  width: 100%;
+  margin: 20rpx;
+}
+
+.location_img {
+  height: 36rpx;
+  width: 36rpx;
+  vertical-align: sub;
+}
+
+.location_txt {
+  color: #53f4eb;
+  font-size: 14px;
+  margin-left: 6rpx;
+}
+
+.order_tit {
+  font-size: 15px;
+  margin: 30rpx 20rpx 0;
+}
+
+.tit_txt {
+  float: left;
+  font-weight: bold;
+  color: #666;
+}
+
+.order_tips {
+  float: right;
+  font-size: 12px;
+  color: #707070;
+}
+
+.img_question {
+  height: 32rpx;
+  width: 32rpx;
+  vertical-align: sub;
+  margin-right: 6rpx;
+}
+
+/* 遮罩层开始 */
+
+.zhezao {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.t_w {
+  position: relative;
+}
+
+.tanchu_view {
+  width: 80%;
+  margin: 25% auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 4rpx;
+}
+
+.bg_view {
+  margin: 30rpx auto 30rpx auto;
+  color: #53f4eb;
+  font-size: 16px;
+  /* background-color:#fff1e6; */
+  background-color: #fff;
+  padding: 6rpx 30rpx;
+  text-align: center;
+}
+
+.txtys {
+  font-size: 12px;
+  margin-bottom: 80rpx;
+  padding: 0 30rpx;
+}
+
+.txtys view {
+  height: auto;
+  line-height: 60rpx;
+}
+
+.txtsure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+  padding: 20rpx;
+}
+
+/*确定背景*/
+
+.txtsurebg {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*确定图标*/
+
+.txtsureimg {
+  display: block;
+  width: 100%;
+  height: 60rpx;
+}
+
+/*确定文本*/
+
+.txtsurename {
+  margin-bottom: 0rpx;
+  color: #53f4eb;
+  font-size: 16px;
+  letter-spacing: 10px;
+}
+
+/*右上角图标*/
+
+.t_image {
+  width: 204rpx;
+  height: 200rpx;
+  position: absolute;
+  top: -4%;
+  left: 85%;
+}
+
+/*右上角图标*/
+
+.t_image1 {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.order_more {
+  margin-left: 16rpx;
+  font-size: 12px;
+  color: #999;
+}
+
+/* 订单部分 begin! */
+
+.main_order {
+  margin-top: 40rpx;
+  height: 78vh;
+  position: relative;
+  overflow-y: auto;
+}
+
+.no_main_order {
+  margin-top: 80rpx;
+  height: 70vh;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.order_inner {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.no_order_inner {
+  display: none;
+}
+
+.inner_tit {
+  padding: 0 10rpx 0 0;
+  height: 50rpx;
+  margin-bottom: 16rpx;
+}
+
+.tit_img {
+  width: 38rpx;
+  height: 38rpx;
+  float: left;
+  margin-right: 8rpx;
+  margin-top: 8rpx;
+  vertical-align: sub;
+}
+
+.tit_text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  float: left;
+}
+
+.btn_cancle {
+  color: rgb(241, 36, 36);
+  font-size: 12px;
+  padding: 2rpx 16rpx;
+  border: 1px solid currentColor;
+  float: right;
+  border-radius: 28rpx;
+  line-height: 1.42857;
+}
+
+.tit_status {
+  float: right;
+  margin-right: 16rpx;
+  font-size: 14px;
+  color: #999;
+  line-height: 1.42857;
+}
+
+.inner_detail {
+  padding: 20rpx 20rpx 48rpx;
+  background-color: #fff;
+  border-radius: 18rpx;
+  margin-left: 30rpx;
+  /* margin-bottom: 10rpx; */
+}
+
+.det_list {
+  line-height: 50rpx;
+}
+
+.appointe_time {
+  float: right;
+  font-size: 12px;
+  color: #999;
+  line-height: 1.42857;
+}
+
+.img_box {
+  width: 100%;
+  height: 140rpx;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.img_orderdtl {
+  height: 100%;
+  display: inline-flex;
+  margin: 0 10rpx;
+  max-width: 50%;
+  position: relative;
+}
+
+
+
+
+.list_tit {
+  margin-right: 16rpx;
+}
+
+.phone_num {
+  color: #1aaba8;
+}
+
+/* end! 订单部分 */
+
+/* 预约按钮 active 状态 begin! */
+
+.btn_active, .btn_defaule {
+  position: fixed;
+  bottom: 8vh;
+  left: 50%;
+  margin-left: -35%;
+  width: 70%;
+  padding: 20rpx auto;
+  border-radius: 40rpx;
+  font-size: 14px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn_active {
+  background-color: #06d1c7;
+  color: #fff;
+  border: 1px solid #06d1c7;
+}
+
+/* 预约按钮 default 状态 begin! */
+
+.btn_defaule {
+  background-color: #ddd;
+  color: #666;
+  border: 1px solid #ddd;
+}
+

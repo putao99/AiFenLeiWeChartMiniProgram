@@ -1,0 +1,75 @@
+<!--pages/exchangeOrderDetial/exchangeOrderDetial.wxml-->
+<view class='{{orderdetailwrap}} clearfix'>
+
+  <view class='orderdetail-top'>
+    <view class='item-list clearfix'>
+        <view class='list-tit'>订单编号：</view>
+        <view class='list-det'>{{orderNumber}}</view>
+    </view>
+    <view class='item-list clearfix'>
+        <view class='list-tit'>订单状态：</view>
+        <view wx:if="{{orderState==0}}" class="list-det">未兑换</view>
+        <view wx:elif="{{orderState==1}}" class="list-det">已兑换</view>
+        <view wx:else="{{orderState==2}}" class="list-det">已取消</view>
+    </view>
+    <view class='item-list clearfix'>
+        <view class='list-tit'>创建时间：</view>
+        <view class='list-det'>{{createTime}}</view>
+    </view>
+    <view class='item-list clearfix'>
+        <view class='list-tit'>兑换时间：</view>
+        <view class='list-det'>{{exchangeTime}}</view>
+    </view>
+    <view class='item-list clearfix'>
+        <view class='list-tit'>商户电话：</view>
+        <view class='list-det'>{{sellerMobile}}</view>
+    </view>
+</view>
+
+  <view class='orderdetail-top'>
+                  <view class="order_inner pad-top" >
+                  <view class='media-left posit-r'>
+                    <image src='{{imgUrl}}'></image>
+                  </view>
+                  <view class='media-body posit-r'>
+        <view class='media-heading'>{{goodsName}}</view>
+          <view class="">【兑换地址】：{{address}}</view>
+                      <view class='clearfix posit-a'>
+                        <view class="order-exchange fr">{{score}}积分</view>
+                  </view>
+                    
+                       </view>
+    <view class='media-tex bor-top clearfix'>
+                      <text class='address-tit' >积分抵扣</text>
+                      <text class='text-det'>{{score}}积分</text>                           </view>
+  
+  
+   </view>
+  </view>
+  
+  <view class="orderdetail-top">
+      <view class="exchangetop-tit">兑换券</view>
+      <view class="exchange-mid">
+        <view class="canvas-wrap">
+           <canvas class='canvas' canvas-id='canvas'></canvas>
+           <view wx:if="{{orderState==0}}"></view>
+            <view wx:elif="{{orderState==1}}" class="exchangestate">已兑换</view>
+            <view wx:else="{{orderState==2}}" class="exchangestate">已失效</view>
+        </view>  
+      </view>
+      <view class="exchange-bottom">
+          <text class="txtsurename">兑换码：{{text}}</text>
+      </view>
+  </view>
+
+    <button wx:if="{{orderState==0}}" class='btn-canclechange go-cancle' catchtap="cancleExchange" data-orderId="{{orderId}}">取消兑换</button>
+    <button wx:else class='btn-canclechange' disabled='true'>取消兑换</button>
+</view>
+
+ <!-- begin! 暂无订单详情 -->
+            <view class="{{nothing}}">
+              <image class="img_nothing" src='/images/icon_wddjl@2x.png'></image>
+              <view class="text_nothing">暂无订单详情~</view>
+            </view>
+            <!-- end! 暂无订单详情 -->
+

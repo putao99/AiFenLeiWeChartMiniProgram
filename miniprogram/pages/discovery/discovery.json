@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "tab-slider": "../../components/tab-slider/tab-slider"
+  },
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "发现",
+  "navigationBarTextStyle": "black"
+}

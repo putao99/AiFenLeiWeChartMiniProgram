@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "dialog": "../../components/dialog/dialog"
+  },
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "家庭绑定",
+  "navigationBarTextStyle": "black"
+}

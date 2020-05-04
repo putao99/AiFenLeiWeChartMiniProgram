@@ -1,0 +1,96 @@
+<!--index.wxml-->
+<view class="container">
+
+	<!-- 顶部轮播图 begin! -->
+	<swiper class="dls_swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{imgUrls}}" wx:key="*this">
+			<swiper-item>
+				<image src="{{item}}" class="slide-image" width="355" height="100" bindtap='onSwiperItemTap'/>
+			</swiper-item>
+		</block>
+	</swiper>
+	<!--end！ 顶部轮播图 -->
+
+	<!-- 主要操作功能板块 begin!-->
+	<view class="dls_operate">
+
+		<!-- 附近回收机 -->
+		<navigator url="/pages/nearbyEquipment/nearbyEquipment" hover-class="navigator-hover" class="iterm_operate">
+			<view class="icon_view">
+				<!-- <view class="img_bgc bgc_b">
+          <image src="/images/icon_equipment.png" class="icon-image" width="50" height="50" />
+        </view> -->
+				<image src="/images/icon_equipment.png" class="img_bgc" />
+			</view>
+			<view class="opera_txt">附近回收机</view>
+		</navigator>
+
+		<!-- 上门回收 -->
+		<navigator url="/pages/appointeToDoor/appointeToDoor" hover-class="navigator-hover" class="iterm_operate">
+			<view class="icon_view">
+				<!-- <view class="img_bgc bgc_o">
+          <image src="/images/icon_order.png" class="icon-image" width="50" height="50" />
+        </view> -->
+				<image src="/images/icon_order.png" class="img_bgc" />
+			</view>
+			<view class="opera_txt">上门回收</view>
+		</navigator>
+
+		<view bindtap='scanCodeHandler' class="iterm_operate">
+			<view class="icon_view">
+				<!-- <view class="img_bgc bgc_g">
+          <image src="/images/icon_erwei.png" class="icon-image" width="50" height="50" />
+        </view> -->
+				<image src="/images/icon_erwei.png" class="img_bgc" />
+			</view>
+			<view class="opera_txt">扫码投递</view>
+		</view>
+		<!-- 帮助中心 -->
+		<navigator bindtap='helpCenterHandler' url="/page/helpCenter/helpCenter" class="iterm_operate">
+			<view class="icon_view">
+				<image src="/images/icon_help.png" class="img_bgc" />
+			</view>
+			<view class="opera_txt">帮助中心</view>
+		</navigator>
+	</view>
+	<!-- end! 主要操作功能板块-->
+	<view class="ugc" bindtap='goToUgc'>
+		<image src="/images/png_zjnxz@2x.png"></image>
+	</view>
+
+	<!-- 我的万德福币、我的投递记录部分 begin!-->
+	<view class='partthree'>
+		<view class='list_group' bindtap='gotoWallet'>
+			<view class="dzgroup_item">
+				<image src="/images/png_wdjf@2x.png" class="yqicon"></image>
+				<view class="group_itemz">
+					<view class='iterm_tit'>我的积分</view>
+					<view class='iterm_num cash_num'>{{iterm_num}}</view>
+				</view>
+			</view>
+			<view class="group_item">
+				<view class="ft_in-access"></view>
+			</view>
+		</view>
+		<view class='list_group' bindtap='gotoDelivery'>
+			<view class="dzgroup_item">
+				<image src="/images/png_ljtd@2x.png" class="yqicon"></image>
+				<view class="group_itemz">
+					<view class='iterm_tit'>累计投递</view>
+					<view class='iterm_num delivery_nub'>{{delivery_nub}}</view>
+				</view>
+			</view>
+
+
+			<view class="group_item">
+				<view class='ft_in-access'></view>
+			</view>
+		</view>
+
+	</view>
+
+	<!-- 我的万德福币、我的投递记录部分 begin!-->
+
+
+
+</view>

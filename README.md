@@ -1,2 +1,1 @@
-# AiFenLeiWeChartMiniProgram
-爱分类微信小程序
+# 爱分类智能回收小程序

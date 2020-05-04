@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#78C9CC",
+  "navigationBarTitleText": "商城兑换订单",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

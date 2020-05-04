@@ -1,0 +1,111 @@
+<tab-slider 
+  height="{{height}}" 
+  tagList="{{tagList}}" 
+  bind:tagChangeAction="tagChangeAction" 
+  bind:scrolltolower="scrolltolowerHandler" 
+>
+
+  <view slot="swiper-0" class="swiper-content news">
+    <block wx:if="{{tagData.news.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+    <view class="weui-cells">
+      <navigator 
+        class="weui-cell {{index === 0 ? 'weui-cell-v' : ''}}"
+        wx:for="{{tagData.news.data}}" 
+        wx:key="index" 
+        wx:for-item="item"
+        url="../messageDetail/messageDetail?type=getNewsById&id={{item.id}}" 
+      >
+          <block wx:if="{{index === 0}}">
+            <image mode="aspectFill" class="weui-media-box__thumb" lazy-load="true" src="{{item.pic}}" style="width:{{imgWidth}}px;height:{{imgWidth/2}}px;"></image>
+          </block>
+          <block wx:else>
+            <view class="weui-cell__hd">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" lazy-load="true" src="{{item.pic}}"></image>
+              </view>
+            </view>
+          </block>
+          <view class="weui-cell__bd {{index === 0 ? 'weui-cell-100': ''}}" >
+            <view class="item-title">{{item.title}}</view>
+            <rich-text class="item-desc" nodes="{{item.contents}}" ></rich-text>
+          </view>
+      </navigator>
+    </view>
+    </block>
+  </view>
+  <view slot="swiper-1" class="swiper-content knowledge">
+    <block wx:if="{{tagData.knowledge.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+    <view class="weui-cells">
+      <navigator 
+        class="weui-cell {{index === 0 ? 'weui-cell-v' : ''}}"
+        wx:for="{{tagData.knowledge.data}}" 
+        wx:key="index" 
+        wx:for-item="item"
+        url="../messageDetail/messageDetail?type=getKnowledgeById&id={{item.id}}" 
+      >
+          <block wx:if="{{index === 0}}">
+            <image mode="aspectFill" class="weui-media-box__thumb" lazy-load="true" src="{{item.pic}}" style="width:{{imgWidth}}px;height:{{imgWidth/2}}px;"></image>
+          </block>
+          <block wx:else>
+            <view class="weui-cell__hd">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" lazy-load="true" src="{{item.pic}}"></image>
+              </view>
+            </view>
+          </block>
+          <view class="weui-cell__bd {{index === 0 ? 'weui-cell-100': ''}}" >
+            <view class="item-title">{{item.res_name}}</view>
+            <rich-text class="item-desc" nodes="{{item.contents}}" ></rich-text>
+          </view>
+      </navigator>
+    </view>
+    </block>
+  </view>
+  <view slot="swiper-2" class="swiper-content activity">
+    <block wx:if="{{tagData.activity.noData}}">
+      <view class="no-data">
+        <image src="../../images/img_nodata.png" style="width:128px;" mode="widthFix"></image>
+        <view>没有相关数据</view>
+      </view>
+    </block>
+    <block wx:else>
+    <view class="weui-cells">
+      <navigator 
+        class="weui-cell {{index === 0 ? 'weui-cell-v' : ''}}"
+        wx:for="{{tagData.activity.data}}" 
+        wx:key="index" 
+        wx:for-item="item"
+        url="../messageDetail/messageDetail?type=getActivityById&id={{item.id}}" 
+      >
+          <block wx:if="{{index === 0}}">
+            <image mode="aspectFill" class="weui-media-box__thumb" lazy-load="true" src="{{item.pic}}" style="width:{{imgWidth}}px;height:{{imgWidth/2}}px;"></image>
+          </block>
+          <block wx:else>
+            <view class="weui-cell__hd">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" lazy-load="true" src="{{item.pic}}"></image>
+              </view>
+            </view>
+          </block>
+          <view class="weui-cell__bd {{index === 0 ? 'weui-cell-100': ''}}" >
+            <view class="item-title">{{item.title}}</view>
+            <rich-text class="item-desc" nodes="{{item.contents}}" ></rich-text>
+          </view>
+      </navigator>
+    </view>
+    </block>
+  </view>
+
+</tab-slider>

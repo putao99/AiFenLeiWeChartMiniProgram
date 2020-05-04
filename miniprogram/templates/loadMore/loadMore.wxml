@@ -1,0 +1,9 @@
+<template name="loadMore">
+  <view class='load-data' wx:if='{{isLoading && hasMoreData}}'>
+    <image class='rotate' mode='aspectFill' src='http://www.tocersoft.com/upload/ueditor/image/20180419/1524132874799071356.png' />
+    <text>加载中</text>
+  </view>
+  <view class='no-data' wx:if='{{!hideBottom}}'>
+    <text>我是有底线的</text>
+  </view>
+</template>

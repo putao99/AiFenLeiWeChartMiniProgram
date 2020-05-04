@@ -1,0 +1,87 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/scanCode/scanCode",
+    "pages/wallet/wallet",
+    "pages/putCode/putCode",
+    "pages/deliveryRecord/deliveryRecord",
+    "pages/login/login",
+    "pages/amountDetail/amountDetail",
+    "pages/nearbyEquipment/nearbyEquipment",
+    "pages/appointeToDoor/appointeToDoor",
+    "pages/myOrders/myOrders",
+    "pages/editOrder/editOrder",
+    "pages/myaddress/myaddress",
+    "pages/newEditAddress/newEditAddress",
+    "pages/withDrawalRecord/withDrawalRecord",
+    "pages/shopMall/shopMall",
+    "pages/shopExchangeOrder/shopExchangeOrder",
+    "pages/exchangeOrderDetial/exchangeOrderDetial",
+    "pages/myCourse/myCourse",
+    "pages/settings/settings",
+    "pages/message/message",
+    "pages/messageDetail/messageDetail",
+    "pages/discovery/discovery",
+    "pages/accountView/accountView",
+    "pages/bindingBag/bindingBag",
+    "pages/bindingHome/bindingHome",
+    "pages/deliveryGuide/deliveryGuide",
+    "pages/selectVillage/selectVillage",
+    "pages/bindRandom/bindRandom",
+    "pages/UserGeneratedContent/UserGeneratedContent",
+    "pages/outBreakResponse/outBreakResponse"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "爱分类智能回收",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8C8C8C",
+    "selectedColor": "#02C0F1",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar_index_normal.png",
+        "selectedIconPath": "images/tabbar_index_selected.png"
+      },
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "发现",
+        "iconPath": "images/tabbar_find_default.png",
+        "selectedIconPath": "images/tabbar_find_selected.png"
+      },
+      {
+        "pagePath": "pages/putCode/putCode",
+        "text": "投放码",
+        "iconPath": "images/tabbar_ewm_normal.png",
+        "selectedIconPath": "images/tabbar_ewm_selected.png"
+      },
+      {
+        "pagePath": "pages/shopMall/shopMall",
+        "text": "商城",
+        "iconPath": "images/icon_sc_default@2x.png",
+        "selectedIconPath": "images/icon_sc_selected@2x.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "images/tabbar_user_normal.png",
+        "selectedIconPath": "images/tabbar_user_selected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}
